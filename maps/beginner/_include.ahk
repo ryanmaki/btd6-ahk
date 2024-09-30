@@ -20,3 +20,4 @@
 #Include hedge.ahk
 #Include end_of_the_road.ahk
 #Include logs\main.ahk
+#Include tinkerton.ahk
