@@ -37,33 +37,33 @@ GlacialTrailImpoppable() {
     Upgrade("Spike A", 2, 0, 0, true)   ; 102 -> 302
 
     WaitForRound(42)
-    Place("Alch")
+    Place("Alch", true)
     Upgrade("Alch", 3, 0, 1, true)      ; 000 -> 301
 
     WaitForRound(45)
-    Place("Farm")
+    Place("Farm", true)
     Upgrade("Farm", 0, 0, 3, true)      ; 000 -> 003
 
     WaitForRound(46)
     Upgrade("Farm", 0, 2, 0, true)      ; 003 -> 023
 
     WaitForRound(50)
-    Place("Mortar")
-    Upgrade("Mortar", 0, 2, 3)          ; 000 -> 023
+    Place("Mortar", true)
+    Upgrade("Mortar", 0, 2, 3, true)          ; 000 -> 023
     Aim("Mortar", 209, 406)
 
     WaitForRound(53)
-    Upgrade("Spike A", 1, 0, 0)         ; 302 -> 402
+    Upgrade("Spike A", 1, 0, 0, true)         ; 302 -> 402
     
     WaitForRound(55)
-    Upgrade("Druid", 0, 1, 0)           ; 130 -> 140
+    Upgrade("Druid", 0, 1, 0, true)           ; 130 -> 140
 
     WaitForRound(74)
     Upgrade("Druid", 0, 1, 0, true)     ; 140 -> 150
 
     WaitForRound(84)
-    Place("Spike B")
-    Upgrade("Spike B", 2, 4, 0)         ; 000 -> 240
+    Place("Spike B", true)
+    Upgrade("Spike B", 2, 4, 0, true)         ; 000 -> 240
 
     WaitForRound(87)
     Upgrade("Spike B", 0, 1, 0, true)         ; 240 -> 250
