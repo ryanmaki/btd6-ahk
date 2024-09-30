@@ -29,7 +29,8 @@ DarkDungeonsImpoppable() {
         "Spike A", ["spike", [897, 530]],
         "Ace B", ["ace", [1027, 496]],
     )
-    
+    CheckDoubleCash()
+
     Place("Dart A", true)
     Place("Dart B", true)
     Place("Sniper A", true)
