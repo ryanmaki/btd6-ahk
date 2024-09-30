@@ -66,8 +66,8 @@ WorkshopImpoppable() {
     Upgrade("Farm A", 1, 0, 0, true)    ; 000 -> 100
 
     WaitForRound(27)
-    Upgrade("Farm A", 1, 0, 0, true)    ; 100 -> 200
     Upgrade("Druid", 1, 0, 0, true)     ; 030 -> 130
+    Upgrade("Farm A", 1, 0, 0, true)    ; 100 -> 200
 
     WaitForRound(29)
     Place("Farm B", true)
@@ -92,10 +92,10 @@ WorkshopImpoppable() {
     WaitForRound(38)
     Place("Village A", true)
     Upgrade("Village A", 0, 0, 2, true) ; 000 -> 002
-    Upgrade("Farm C", 0, 0, 2, true)    ; 000 -> 002
+    Upgrade("Farm B", 0, 0, 2, true)    ; 000 -> 002
 
     WaitForRound(39)
-    Upgrade("Farm C", 0, 0, 1, true)    ; 002 -> 003
+    Upgrade("Farm B", 0, 0, 1, true)    ; 002 -> 003
 
     WaitForRound(41)
     Sell("Dart C")
@@ -113,7 +113,7 @@ WorkshopImpoppable() {
     Upgrade("Farm A", 0, 0, 3, true)    ; 200 -> 203
 
     WaitForRound(45)
-    Upgrade("Farm B", 0, 0, 3, true)    ; 200 -> 203
+    Upgrade("Farm C", 0, 0, 3, true)    ; 200 -> 203
 
     WaitForRound(48)
     Upgrade("Village A", 0, 0, 1, true) ; 102 -> 103
