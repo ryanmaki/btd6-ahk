@@ -169,8 +169,6 @@ MuddyPuddlesImpoppable() {
     Upgrade("Sniper A", 3, 0, 0, true)  ; 101 -> 401
 
     WaitForRound(83)
-    Open("Sniper A")
-    WaitForUpgrade(1)
     Sell("Village C")
     Place("Village C", true)
     Upgrade("Village C", 2, 3, 0, true) ; 000 -> 230

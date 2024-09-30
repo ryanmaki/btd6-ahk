@@ -16,8 +16,8 @@ InfernalImpoppable() {
         "Sniper B", ["sniper", [62, 549]],
         "Alch", ["alch", [67, 491]],
         "Sniper C", ["sniper", [132, 518]],
-	"Ace", ["ace", [1559, 586]],
-	"Alch B", ["alch", [472, 213]]
+        "Ace", ["ace", [1559, 586]],
+        "Alch B", ["alch", [472, 213]]
     )
     
     CheckDoubleCash()
