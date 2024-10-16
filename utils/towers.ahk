@@ -174,13 +174,16 @@ Ability(tower, ability, position, asap := false) {
         return
     }
     if position = "1" {
-        Send ("{1}")
+        SendEvent("{1}")
     }
     if position = "2" {
-        Send("{2}")
+        SendEvent("{2}")
     }
     if position = "3" {
-        Send("{3}")
+        SendEvent("{3}")
+    }
+    if position = "4" {
+        SendEvent("{4}")
     }
     sleep(100)
 }

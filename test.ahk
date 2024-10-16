@@ -6,6 +6,10 @@
     TestHeroSelection()
 }
 
+^!+k:: {
+    TestAbility()
+}
+
 ^!+p:: {
     LogMsg("Script stopped")
     Reload()
@@ -16,4 +20,8 @@ TestHeroSelection() {
         global hero := hero
         ChangeHero(hero)
     }
+}
+
+TestAbility() {
+    Ability("sniper", "1", "4")
 }
