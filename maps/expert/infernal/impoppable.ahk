@@ -148,7 +148,7 @@ InfernalImpoppable() {
     WaitForRound(74)
     Upgrade("Druid A", 1, 1, 0, true)   ; 130 -> 240
 
-    WaitForRound(79)
+    WaitForRound(78)
     Upgrade("Druid A", 0, 1, 0, true)   ; 240 -> 250
     Sell("Boat A")
     Sell("Boat B")
@@ -160,13 +160,10 @@ InfernalImpoppable() {
     Upgrade("Village", 2, 3, 0, true)   ; 000 -> 230
     Upgrade("Sniper A", 2, 0, 0, true)  ; 302 -> 502
 
-    WaitForRound(94)
-    Upgrade("Alch", 1, 0, 0, true)      ; 420 -> 520
-    
+    WaitForRound(91)
     Place("Ace", true)
     Upgrade("Ace", 0, 2, 5, true)       ; 000 -> 025
     Place("Alch B", true)
-
-    Upgrade("Alch B", 0, 0, 5, true)    ; 000 -> 005
-    Upgrade("Dart", 0, 2, 3, true)      ; 002 -> 025
+    
+    Upgrade("Alch", 1, 0, 0, true)      ; 420 -> 520
 }
