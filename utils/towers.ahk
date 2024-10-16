@@ -1,3 +1,4 @@
+SetKeyDelay(15, 300)
 Place(tower, asap := false) {
     if defeated {
         return
@@ -10,7 +11,7 @@ Place(tower, asap := false) {
     }
     if asap {
         Loop {
-            Send(KEYS[type])
+            SendEvent(KEYS[type])
             Sleep(100)
             if SearchImage("buttons\close_place", "", 1570, 85, 1635, 150) {
                 break
@@ -23,7 +24,7 @@ Place(tower, asap := false) {
             UpdateRound()
         }
     } else {
-        Send(KEYS[type])
+        SendEvent(KEYS[type])
         Sleep(100)
     }
     MouseMove(x,y)
