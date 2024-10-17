@@ -123,16 +123,16 @@ DarkCastleImpoppable() {
     Open("Village B")
     WaitForUpgrade(2)
     Close()
-    Remove(150, 180)                    ; Remove Obstacle A
+    Remove(150, 180, 455, 249)          ; Remove Obstacle A
     Upgrade("Village B", 0, 1, 0, true) ; 012 -> 022
 
     WaitForRound(50)
     Open("Sub A")
     WaitForUpgrade(3)
     Close()
-    Remove(150, 380)                    ; Remove Obstacle B
-    Remove(150, 680)                    ; Remove Obstacle C
-    Remove(150, 930)                    ; Remove Obstacle D
+    Remove(150, 380, 455, 494)           ; Remove Obstacle B
+    Remove(150, 680, 455, 779)           ; Remove Obstacle C
+    Remove(150, 930, 455, 950)           ; Remove Obstacle D
 
     WaitForRound(53)
     Place("Sniper A", true)
