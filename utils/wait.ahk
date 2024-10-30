@@ -33,10 +33,11 @@ CheckInstaMonkey() {
 
 CheckPauseMenu() {
     MouseMove(1, 1)
-    Sleep(1500)
+    Sleep(500)
     if SearchImage("buttons\home") {
         LogMsg("Pause menu detected on round " currentRound)
         Send("{Esc}")
+        Sleep(500)
     }
 }
 
