@@ -1,3 +1,18 @@
+; UpdateMouseRest() changes the mouse cursor location to the  
+; midpoint of one or more towers
+UpdateMouseRest(towers*) {
+    xSum := 0
+    ySum := 0
+    count := towers.Length
+    for tower in towers {
+        xSum += TS[tower][2][1]
+        ySum += TS[tower][2][2]
+    }
+    coords := [(xSum // count), (ySum // count)]
+    ; LogMsg("xSum: " xSum " ySum: " ySum " tower count: " count " mouseRest coord: [" coords[1] ", " coords[2] "]" )
+    global mouseRest := coords
+}
+
 CheckLevelUp() {
     if SearchImage("states\level_up",, 982, 537, 1084, 603) {
         LogMsg("Level up detected")
