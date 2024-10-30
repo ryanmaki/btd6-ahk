@@ -1,37 +1,36 @@
 DarkCastleImpoppable() {
-    global mouseRest := [910, 940]
+
     global TS := Map(
-        "Dart A", ["dart", [595, 494]],
-        "Sub A", ["sub", [1083, 690]],
-        "Ben", ["hero", [487, 254]],
-        "Farm A", ["farm", [996, 1009]],
-        "Farm B", ["farm", [834, 1009]],
-        "Alch A", ["alch", [1015, 662]],
-        "Farm C", ["farm", [992, 869]],
-        "Village A", ["village", [851, 887]],
-        "Sub B", ["sub", [1159, 690]],
-        "Village B", ["village", [732, 889]],
-        "Druid A", ["druid", [652, 841]],
-        "Druid B", ["druid", [715, 804]],
         "Ace", ["ace", [828, 757]],
-        "Sniper A", ["sniper", [720, 743]],
+        "Alch A", ["alch", [1015, 662]],
+        "Alch B", ["alch", [937, 771]],
+        "Alch C", ["alch", [942, 715]],
+        "Ben", ["hero", [487, 254]],
+        "Dart A", ["dart", [595, 494]],
         "Dart B", ["dart", [210, 285]],
         "Dart C", ["dart", [210, 815]],
+        "Druid A", ["druid", [652, 841]],
+        "Druid B", ["druid", [715, 804]],
+        "Farm A", ["farm", [996, 1009]],
+        "Farm B", ["farm", [834, 1009]],
+        "Farm C", ["farm", [992, 869]],
+        "Sniper A", ["sniper", [720, 743]],
         "Sniper B", ["sniper", [686, 695]],
-        "Alch B", ["alch", [937, 771]],
-        "Village C", ["village", [855, 851]],
         "Sniper C", ["sniper", [703, 883]],
-        "Alch C", ["alch", [942, 715]]
+        "Sub A", ["sub", [1083, 690]],
+        "Sub B", ["sub", [1159, 690]],
+        "Village A", ["village", [851, 887]],
+        "Village B", ["village", [732, 889]],
+        "Village C", ["village", [855, 851]],
     )
     
     CheckDoubleCash()
 
-    Place("Dart A")
-    Place("Sub A")
+    Place("Dart A", true)
+    Targeting("Dart A", 3)              ; First -> Strong
+    Place("Sub A", true)
 
     StartGame()
-    Power("cashdrop")
-    Targeting("Dart A", 3)              ; First -> Strong
 
     Place("Ben", true)
     Upgrade("Sub A", 1, 0, 0, true)     ; 000 -> 100
@@ -46,6 +45,7 @@ DarkCastleImpoppable() {
     Upgrade("Sub A", 0, 0, 1, true)     ; 201 -> 202
 
     WaitForRound(19)
+    UpdateMouseRest("Farm A")           ; Hover Farm A
     Place("Farm A", true)
 
     WaitForRound(20)
@@ -58,9 +58,11 @@ DarkCastleImpoppable() {
 
     WaitForRound(25)
     Place("Farm B", true)
+    UpdateMouseRest("Farm A", "Farm B") ; Hover Farm A, B
 
     WaitForRound(30)
     Upgrade("Farm A", 0, 0, 3, true)    ; 000 -> 003
+    UpdateMouseRest("Farm B")           ; Hover Farm B
     Upgrade("Farm B", 0, 0, 2, true)    ; 000 -> 002
 
     WaitForRound(31)
@@ -81,6 +83,7 @@ DarkCastleImpoppable() {
 
     WaitForRound(38)
     Place("Farm C", true)
+    UpdateMouseRest("Farm C")           ; Hover Farm C
     Upgrade("Farm C", 0, 0, 2, true)    ; 000 -> 002
     
     WaitForRound(39)
