@@ -80,7 +80,14 @@ CheckSettings() {
 }
 
 InGame() {
-    ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790)
+    Loop 5 {
+        if ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790) {
+            LogMsg("Game is about to start.")
+            break
+        }
+        LogMsg("Ok button at start of game not found.")
+        Sleep 2000
+    }
     if changeSettings {
         CheckSettings()
     }
