@@ -58,6 +58,10 @@ WaitForRound(round, delay := 0) {
         }
         if defeated or SearchImage("states\defeat") {
             global defeated := true
+            Sleep 200
+            Send "#!g"      ; record last 30 seconds
+            LogMsg("recorded last 30 seconds after finding defeat on R" currentRound)
+            Sleep 200
             break
         }
         CheckLevelUp()
@@ -104,9 +108,18 @@ WaitForUpgrade(path) {
         if SearchUpgrade(path) {
             break
         }
-        if SearchImage("states\defeat") or SearchImage("states\victory") or CheckInstaMonkey() {
+        if SearchImage("states\defeat") {
             global defeated := true
             LogMsg("Found defeat instead of upgrade " path " on " toweropen)
+            Sleep 200
+            Send "#!g"      ; record last 30 seconds
+            LogMsg("recorded last 30 seconds after finding defeat on upgrade " path " on " toweropen)
+            Sleep 200
+            break
+        }
+        if SearchImage("states\victory") or CheckInstaMonkey() {
+            global defeated := true
+            LogMsg("Found victory instead of upgrade " path " on " toweropen)
             break
         }
         CheckLevelUp()
@@ -124,9 +137,18 @@ WaitForAbility(tower, ability, position, delay := 0) {
         if defeated {
             break
         }
-        if SearchImage("states\defeat") or SearchImage("states\victory") or CheckInstaMonkey() {
+        if SearchImage("states\defeat") {
             global defeated := true
             LogMsg("Found defeat instead of ability " ability " from " tower)
+            Sleep 200
+            Send "#!g"      ; record last 30 seconds
+            LogMsg("recorded last 30 seconds after finding defeat instead of ability " ability " from " tower)
+            Sleep 200
+            break
+        }
+        if SearchImage("states\victory") or CheckInstaMonkey() {
+            global defeated := true
+            LogMsg("Found victory instead of ability " ability " from " tower)
             break
         }
         CheckLevelUp()
