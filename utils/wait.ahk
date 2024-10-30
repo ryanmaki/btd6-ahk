@@ -42,6 +42,9 @@ CheckPauseMenu() {
 }
 
 WaitForRound(round, delay := 0) {
+    if defeated {
+        return
+    }
     CheckPauseMenu()
     MouseMove(mouseRest[1], mouseRest[2])
     if speed_adjust {
