@@ -80,7 +80,14 @@ CheckSettings() {
 }
 
 InGame() {
-    ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790)
+    Loop 5 {
+        if ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790) {
+            LogMsg("Game is about to start.")
+            break
+        }
+        LogMsg("Ok button at start of game not found.")
+        Sleep 2000
+    }
     if changeSettings {
         CheckSettings()
     }
@@ -104,6 +111,12 @@ InGame() {
     global currentMap := [0, 0]
     global mouseRest := [30, 1]
     global currentRound := 0
+    global toweropen := ""
+    global menuside := ""
+    global shopopen := false
+    global double_cash := false
+    global speed_adjust := false
+    global allowPowers := powerSettings
 }
 
 OpenBoxes() {

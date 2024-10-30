@@ -14,3 +14,4 @@
 #Include off_the_coast.ahk
 #Include cornfield.ahk
 #Include underground.ahk
+#Include castle_revenge.ahk

@@ -173,16 +173,16 @@
 |                    |                 |                    |                 |           |                         |            |        |
 | **_Expert_**       |                 |                    |                 |           |                         |            |        |
 |                    |                 |                    |                 |           |                         |            |        |
-| Glacial Trail      | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| Dark Dungeons      | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| Sanctuary          | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| Ravine             | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| Flooded Valley     | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| Infernal           | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
+| Glacial Trail      | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| Dark Dungeons      | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| Sanctuary          | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| Ravine             | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| Flooded Valley     | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| Infernal           | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
 |                    |                 |                    |                 |           |                         |            |        |
-| Bloody Puddles     | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| Workshop           | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| Quad               | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
+| Bloody Puddles     | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| Workshop           | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| Quad               | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
 | Dark Castle        | ✅               | ❌                  | ❌               | ❌         | ✅                       | ✅          | ✅      |
-| Muddy Puddles      | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
-| #Ouch              | ❌               | ❌                  | ❌               | ❌         | ❌                       | ❌          | ❌      |
+| Muddy Puddles      | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |
+| #Ouch              | ❌               | ❌                  | ❌               | ❌         | ❌                       | ✅          | ❌      |

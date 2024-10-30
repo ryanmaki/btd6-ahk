@@ -24,12 +24,12 @@ HERO_POSITIONS := Map(
     "corvus", 4,
     "churchill", 5,
     "benjamin", 6,
-    "ezili", 7,
-    "pat", 8,
+    "pat", 7,
+    "ezili", 8,
     "adora", 9,
-    "brickell", 10,
-    "etienne", 11,
-    "sauda", 12,
+    "etienne", 10,
+    "sauda", 11,
+    "brickell", 12,
     "psi", 13,
     "geraldo", 14
 )

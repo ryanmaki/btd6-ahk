@@ -20,3 +20,4 @@
 #Include chutes.ahk
 #Include rake.ahk
 #Include spice_islands.ahk
+#Include luminous_cove.ahk
