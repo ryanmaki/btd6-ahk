@@ -1,5 +1,7 @@
 # Required towers
 
+## <span style="color:red">**As of v45.x this has not been updated. Information may be incorrect/incomplete**</span>
+
 #### Easy (All beginner and intermediate maps)
 - Dart Monkey 024
 - Sniper Monkey 320
