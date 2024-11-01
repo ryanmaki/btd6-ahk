@@ -18,11 +18,8 @@ Place(tower, asap := false) {
             }
             if SearchImage("states\defeat") or SearchImage("states\victory") {
                 global defeated := true
-                Sleep 200
-                Send "#!g"      ; record last 30 seconds
-                LogMsg("recorded last 30 seconds after finding defeat when trying to Place " tower)
-
-                Sleep 200
+                LogMsg('Found defeat when placing ' tower '')
+                RecordDefeat()
                 break
             }
             CheckLevelUp()

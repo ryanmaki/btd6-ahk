@@ -11,3 +11,5 @@ userDifficulty := IniRead("config.ini", "settings", "difficulty", "")
 changeSettings := IniRead("config.ini", "settings", "changeSettings", "true") == "true"
 
 powerSettings := IniRead("config.ini", "settings", "allowPowers", "true") == "true"
+
+enableRecordDefeat := IniRead("config.ini", "settings", "enableRecordDefeat", false) == "true"
