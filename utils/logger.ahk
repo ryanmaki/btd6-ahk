@@ -9,7 +9,7 @@ LogMsg(msg) {
         if msg == "Victory" || msg == "Defeat" {
             msg := msg VictoryDefeatText()
         }
-        FileAppend("[" FormatTime(, "HH:mm:ss") "] " msg "`n", logFile)
+        FileAppend("[" FormatTime(, "yyyy-MM-ddTHH:mm:ss") "] " msg "`n", logFile)
     }
 }
 
