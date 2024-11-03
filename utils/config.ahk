@@ -13,3 +13,7 @@ changeSettings := IniRead("config.ini", "settings", "changeSettings", "true") ==
 powerSettings := IniRead("config.ini", "settings", "allowPowers", "true") == "true"
 
 enableRecordDefeat := IniRead("config.ini", "settings", "enableRecordDefeat", false) == "true"
+
+enableInstaScreenshot := IniRead("config.ini", "settings", "enableInstaScreenshot", false) == "true"
+
+ssOption := IniRead("config.ini", "settings", "ssOption", "")

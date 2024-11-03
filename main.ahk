@@ -18,7 +18,7 @@
 }
 
 Start() {
-    While WinActive("BloonsTD6") {
+    While WinActive(windowName) {
         Switch CheckMenuState() {
             Case "home":
                 HomeMenu()
@@ -120,6 +120,7 @@ InGame() {
 }
 
 OpenBoxes() {
+    ScreenshotInstas()
     ClickImage("buttons\collect", 2000)
     LogMsg("Opening boxes")
     While !SearchImage("states\event") {
