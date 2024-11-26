@@ -4,9 +4,9 @@ RESORT_DATA := Map(
 
 ResortEasy() {
     global TS := Map(
-        "Dart", ["dart", [1350, 189]],
-        "Druid A", ["druid", [1286, 214]],
-        "Druid B", ["druid", [1346, 254]],
+        "Dart", ["dart", [1348, 190]],
+        "Druid A", ["druid", [1283, 213]],
+        "Druid B", ["druid", [1344, 258]],
         "Sniper", ["sniper", [720, 470]],
     )
     GeneralEasy()

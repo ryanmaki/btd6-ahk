@@ -4,9 +4,9 @@ SKATES_DATA := Map(
 
 SkatesEasy() {
     global TS := Map(
-        "Dart", ["dart", [271, 319]],
-        "Druid A", ["druid", [272, 422]],
-        "Druid B", ["druid", [183, 248]],
+        "Dart", ["dart", [273, 321]],
+        "Druid A", ["druid", [275, 426]],
+        "Druid B", ["druid", [185, 247]],
         "Sniper", ["sniper", [1111, 828]],
     )
     GeneralEasy()

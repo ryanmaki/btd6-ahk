@@ -4,8 +4,8 @@ THE_CABIN_DATA := Map(
 
 TheCabinEasy() {
     global TS := Map(
-        "Dart", ["dart", [569, 81]],
-        "Druid A", ["druid", [667, 132]],
+        "Dart", ["dart", [570, 82]],
+        "Druid A", ["druid", [667, 137]],
         "Druid B", ["druid", [773, 104]],
         "Sniper", ["sniper", [557, 332]],
     )

@@ -4,8 +4,8 @@ IN_THE_LOOP_DATA := Map(
 
 InTheLoopEasy() {
     global TS := Map(
-        "Dart", ["dart", [476, 853]],
-        "Druid A", ["druid", [1151, 741]],
+        "Dart", ["dart", [477, 848]],
+        "Druid A", ["druid", [1150, 738]],
         "Druid B", ["druid", [1056, 851]],
         "Sniper", ["sniper", [777, 666]],
     )
