@@ -59,7 +59,7 @@ WaitForRound(round, delay := 0) {
         if defeated or SearchImage("states\defeat") {
             global defeated := true
             LogMsg('Found defeat on R' currentRound ' when waiting for R' round '')
-            RecordDefeat()
+            ScreenRecordDefeat()
             break
         }
         CheckLevelUp()
@@ -109,7 +109,7 @@ WaitForUpgrade(path) {
         if SearchImage("states\defeat") {
             global defeated := true
             LogMsg("Found defeat instead of upgrade " path " on " toweropen)
-            RecordDefeat()
+            ScreenRecordDefeat()
             break
         }
         if SearchImage("states\victory") or CheckInstaMonkey() {
@@ -135,7 +135,7 @@ WaitForAbility(tower, ability, position, delay := 0) {
         if SearchImage("states\defeat") {
             global defeated := true
             LogMsg("Found defeat instead of ability " ability " from " tower)
-            RecordDefeat()
+            ScreenRecordDefeat()
             break
         }
         if SearchImage("states\victory") or CheckInstaMonkey() {

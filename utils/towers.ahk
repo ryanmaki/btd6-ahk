@@ -19,7 +19,7 @@ Place(tower, asap := false) {
             if SearchImage("states\defeat") or SearchImage("states\victory") {
                 global defeated := true
                 LogMsg('Found defeat when placing ' tower '')
-                RecordDefeat()
+                ScreenRecordDefeat()
                 break
             }
             CheckLevelUp()

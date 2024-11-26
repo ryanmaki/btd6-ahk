@@ -31,3 +31,19 @@ Todo() {
     global difficulty := ""
     ClickImage("buttons\home", 4000)
 }
+
+MakeWindowActive(window := windowName) {
+    
+    if !WinExist(window) {
+        LogMsg("Found the following window did not exist during MakeWindowActive(): " window)
+        return
+    }
+    
+    if !WinActive(window) {
+        LogMsg(window " was not active, activating")
+        WinActivate(window)
+        LogMsg(window " WinActivate ran")
+        WinWaitActive(window)
+        LogMsg(window " is now activated")
+    }
+}

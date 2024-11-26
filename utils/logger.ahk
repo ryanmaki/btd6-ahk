@@ -40,7 +40,7 @@ LogDifficulty() {
 }
 
 ; Utilizes Xbox Gamebar to capture the previous 30 seconds of game play
-RecordDefeat(msg?) {
+ScreenRecordDefeat(msg?) {
     if enableRecordDefeat {
         defaultMsg := "Recorded last 30 seconds after defeat"
         recordHotkey := "#!g"                                               ; Win + Alt + G - shortcut that records last 30 seconds
@@ -61,14 +61,16 @@ ScreenshotInstas() {
 
     currInstaGroup := GetInstaGroup()
 
-    ; initialize prevInstaGroup the first time script calls this function 
+    ; initialize prevInstaGroup the first time this function called 
     if !IsSet(prevInstaGroup) {
         global prevInstaGroup := 0
     }
 
     if currInstaGroup != prevInstaGroup {
         Sleep(4000)        ; ensure collection page animations have completed
-        TakeScreenshot()
+        TakeScreenshot(ShareXWindow)
+        TakeScreenshot(ShareXCropInsta)
+
         prevInstaGroup := currInstaGroup
     }
 
@@ -95,25 +97,30 @@ ScreenshotInstas() {
     }
 }
 
-TakeScreenshot() {
-    ssOptions := Map()
-    ssOptions["shareX"] := InstaShareX
-    ssOptions["ffmpeg"] := InstaFFMPEG
+TakeScreenshot(screenshotFunc) {
+    screenshotFunc.Call()
+}
 
-    for functionName in ssOptions {
-        if functionName == ssOption {
-            ssOptions[functionName].Call()
-        }
+; screenshot entire collection page
+ShareXWindow() {
+    Send("^#{Numpad9}")
+    LogMsg("screenshot of collection page using ShareX")
+    Sleep(2000)
+    MakeWindowActive()            
+}
+
+ShareXCropInsta() {
+    Loop 4 {
+        Send("^#{Numpad" A_Index "}")   ; screenshot insta[idxLoop]
+        Sleep(2000)                     ; allow time for screenshot to process    
+        MakeWindowActive()            
     }
+    
+    LogMsg("4 screenshots - 1 of each insta on collection page using ShareX")
+
 }
 
-InstaShareX() {
-    Send("!{PrintScreen}")
-    LogMsg("screenshot of instas taken with ShareX")
-    Sleep(2000)     ; delay to give time for ss notif to disolve
-}
-
-InstaFFMPEG() {
+FFMPEGCropInsta(dirName := ".\screenshots") {
     imgCoords := Map(
         1, [1390, 365],
         2, [1515, 365],
@@ -121,12 +128,12 @@ InstaFFMPEG() {
         4, [1515, 477],
     )    
 
-    currentTime := FormatTime(,"yyMMddTHHmm")
+    currentTime := FormatTime(A_NowUTC, "MMddTHHmm")
     dirName := ".\screenshots"
     
     if !DirExist(dirName) { 
         DirCreate(dirName) 
-    }   
+    }
 
     loop imgCoords.Count {
         cropCmd := '"crop=90:90:' imgCoords[A_Index][1] ':' imgCoords[A_Index][2] '" '
@@ -136,10 +143,7 @@ InstaFFMPEG() {
         LogMsg("screenshot of featured insta: " A_Index)        
     }
 
-    if !WinActive(windowName)
-    {
-        WinActivate(windowName)
-    }
-
     Sleep(2000)     ; delay because command line may be slow to fully close 
+    LogMsg("Took ffmpeg screenshot of each insta")
+    MakeWindowActive()
 }

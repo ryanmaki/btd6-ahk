@@ -80,13 +80,15 @@ CheckSettings() {
 }
 
 InGame() {
-    Loop 5 {
-        if ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790) {
-            LogMsg("Game is about to start.")
-            break
+    if difficulty == "impoppable" {
+        Loop 2 {
+            if ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790) {
+                LogMsg("Game is about to start.")
+                break
+            }
+            LogMsg("Ok button at start of game not found.")
+            Sleep 2000
         }
-        LogMsg("Ok button at start of game not found.")
-        Sleep 2000
     }
     if changeSettings {
         CheckSettings()
