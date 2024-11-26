@@ -4,10 +4,10 @@ HEDGE_DATA := Map(
 
 HedgeEasy() {
     global TS := Map(
-        "Dart", ["dart", [300, 578]],
-        "Druid A", ["druid", [326, 521]],
-        "Druid B", ["druid", [448, 522]],
-        "Sniper", ["sniper", [548, 1002]],
+        "Dart", ["dart", [301, 577]],
+        "Druid A", ["druid", [328, 512]],
+        "Druid B", ["druid", [446, 733]],
+        "Sniper", ["sniper", [548, 989]],
     )
     GeneralEasy()
 }
