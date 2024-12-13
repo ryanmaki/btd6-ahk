@@ -133,13 +133,21 @@ OpenBoxes() {
     }
 }
 
-CollectDailyReward() {
-    if ClickImage("buttons\chest", 3000, "", 563, 639, 588, 664) {
-        LogMsg("Collecting the daily reward")
-        Loop 2 {
+CollectDailyReward(attempts := 3) {
+    chestImg := "buttons\chest"
+    closeBtn := "buttons\close_chest"
+    closeAltBtn := "buttons\close_chestalt"
+
+    loop attempts {
+        if SearchImage(chestImg) {
             Click(x, y)
-            Sleep(3000)
+            LogMsg("Collecting daily reward")
+            
+            loop {
+                Click()
+                Sleep(200)
+            } until ClickImage(closeBtn) || ClickImage(closeAltBtn)
         }
-        ClickImage("buttons\close_chest", 1000, "", 571, 377, 596, 402)
+        Sleep(500)
     }
 }
