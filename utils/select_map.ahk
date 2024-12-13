@@ -24,13 +24,13 @@ SelectNextMap() {
 SelectRandomMap() {
     Switch mapCategory {
         Case "beginner":
-            SelectMap(1, Random(1, 22))
+            SelectMap(1, Random(1, 23))
         Case "intermediate":
-            SelectMap(5, Random(1, 21))
+            SelectMap(5, Random(1, 23))
         Case "advanced":
-            SelectMap(9, Random(1, 15))
+            SelectMap(9, Random(1, 19))
         Case "expert":
-            SelectMap(12, Random(1, 11))
+            SelectMap(13, Random(1, 12))
         Default:
             randomMap := ALL_MAPS[Random(1, ALL_MAPS.Length)]
             SelectMap(randomMap[1], randomMap[2])
@@ -59,9 +59,9 @@ SelectMap(page, number) {
                 ClickImage("buttons\beginner")
             Case 5,6,7,8:
                 ClickImage("buttons\intermediate")
-            Case 9,10,11:
+            Case 9,10,11,12:
                 ClickImage("buttons\advanced")
-            Case 12,13:
+            Case 13,14:
                 ClickImage("buttons\expert")
         }
     }
