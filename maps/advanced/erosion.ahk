@@ -4,12 +4,12 @@ EROSION_DATA := Map(
 
 ErosionEasy() {
     global TS := Map(
-        "Dart A", ["dart", [426, 823]],
+        "Dart A", ["dart", [426, 821]],
         "Druid A", ["druid", [769, 557]],
-        "Dart B", ["dart", [606, 743]],
+        "Dart B", ["dart", [606, 742]],
         "Druid B", ["druid", [725, 500]],
         "Sniper", ["sniper", [1363, 115]],
-        "Dart C", ["dart", [835, 592]],
+        "Dart C", ["dart", [835, 591]],
         "Dart D", ["dart", [1054, 733]]
     )
 

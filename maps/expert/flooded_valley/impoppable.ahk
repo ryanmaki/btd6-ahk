@@ -19,17 +19,17 @@ FloodedValleyImpoppable() {
     )
 
     CheckDoubleCash()
-
-    Place("Sub A")
-    Place("Sub B")
+    
+    Place("Sub A", true)
+    Place("Sub B", true)
     
     StartGame()
 
     WaitForRound(11)
-    Place("Ben")
+    Place("Ben", true)
     
     WaitForRound(13)
-    Upgrade("Sub A", 0, 0, 1)               ; 000 -> 001
+    Upgrade("Sub A", 0, 0, 1, true)               ; 000 -> 001
 
     WaitForRound(14)
     Upgrade("Sub A", 0, 1, 0, true)         ; 001 -> 011
@@ -61,13 +61,13 @@ FloodedValleyImpoppable() {
     Upgrade("Spike A", 1, 0, 0, true)       ; 202 -> 302
     
     WaitForRound(36)
-    Place("Village A")
-    Upgrade("Village A", 0, 0, 2)           ; 000 -> 002
+    Place("Village A", true)
+    Upgrade("Village A", 0, 0, 2, true)           ; 000 -> 002
         
     WaitForRound(39)
-    Place("Village B")
-    Upgrade("Village B", 0, 0, 2)           ; 000 -> 002       
-    Place("Alch A")
+    Place("Village B", true)
+    Upgrade("Village B", 0, 0, 2, true)           ; 000 -> 002       
+    Place("Alch A", true)
     Upgrade("Alch A", 3, 0, 0, true)        ; 000 -> 300
     
     WaitForRound(40)
@@ -81,9 +81,9 @@ FloodedValleyImpoppable() {
     Upgrade("Wizard A", 0, 0, 1, true)      ; 103 -> 104
 
     WaitForRound(45)
-    Place("Farm A")
+    Place("Farm A", true)
     UpdateMouseRest("Farm A")
-    Upgrade("Farm A", 2, 0, 0)              ; 000 -> 200
+    Upgrade("Farm A", 2, 0, 0, true)              ; 000 -> 200
     Place("Farm B", true)
     UpdateMouseRest("Farm A", "Farm B")     ; Hover Farm A, B
     Upgrade("Farm B", 2, 0, 0, true)        ; 000 -> 200
@@ -110,7 +110,7 @@ FloodedValleyImpoppable() {
     Upgrade("Village A", 2, 0, 0, true)     ; 004 -> 204
     
     WaitForRound(54)
-    Place("Ace A")
+    Place("Ace A", true)
     Upgrade("Ace A", 2, 0, 3, true)         ; 000 -> 203
 
     WaitForRound(55)
@@ -138,10 +138,10 @@ FloodedValleyImpoppable() {
     Upgrade("Ace A", 0, 0, 1, true)         ; 204 -> 205
 
     WaitForRound(83)
-    Upgrade("Village B", 0, 2, 0)           ; 002 -> 022
+    Upgrade("Village B", 0, 2, 0, true)           ; 002 -> 022
     
     WaitForRound(87)    
-    Place("Spike B")
+    Place("Spike B", true)
     Upgrade("Spike B", 2, 5, 0, true)       ; 000 -> 250
 
     WaitForRound(88)
@@ -152,6 +152,6 @@ FloodedValleyImpoppable() {
     Upgrade("Druid A", 1, 5, 0, true)       ; 000 -> 150
 
     WaitForRound(91)
-    Place("Sniper A")
-    Upgrade("Sniper A", 2, 0, 5)            ; 000 -> 205
+    Place("Sniper A", true)
+    Upgrade("Sniper A", 2, 0, 5, true)            ; 000 -> 205
 }

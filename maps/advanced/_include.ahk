@@ -15,3 +15,5 @@
 #Include cornfield.ahk
 #Include underground.ahk
 #Include castle_revenge.ahk
+#Include ancient_portal.ahk
+#Include last_resort.ahk
