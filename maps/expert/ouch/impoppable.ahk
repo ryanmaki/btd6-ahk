@@ -3,7 +3,7 @@ OuchImpoppable() {
         "Ace A", ["ace", [1536, 973]],
         "Alch A", ["alch", [1173, 1028]],
         "Alch B", ["alch", [1608, 1051]],
-        "Ben", ["hero", [174, 673]],
+        "Ben", ["hero", [329, 673]],
         "Boat A", ["boat", [728, 467]],
         "Dart A", ["dart", [562, 326]],
         "Druid A", ["druid", [1462, 781]],

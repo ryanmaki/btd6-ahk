@@ -1,4 +1,5 @@
-BloodyPuddlesImpoppable() {
+; copied directly from BloodyPuddles Impoppable
+BloodyPuddlesHard() {
     global TS := Map(
         "Ace A", ["ace", [668, 236]],
         "Ace B", ["ace", [988, 505]],
@@ -29,6 +30,8 @@ BloodyPuddlesImpoppable() {
         "Village A", ["village", [902, 263]],
         "Village B", ["village", [1020, 271]],
     )
+
+    CheckDoubleCash()
 
     UpdateMouseRest("Farm A")
 

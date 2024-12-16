@@ -83,7 +83,7 @@ DarkDungeonsImpoppable() {
     Upgrade("Druid A", 0, 1, 0, true)       ; 120 -> 130
     Upgrade("Sniper A", 0, 2, 0, true)      ; 100 -> 120
     Targeting("Sniper A", 1)                ; Strong -> First
-    Targeting("Sniper A", 1, 2)             ; Camo Priority
+    Targeting("Sniper A", 1, true)             ; Camo Priority
     Upgrade("Sniper B", 0, 2, 0, true)      ; 100 -> 120
     Targeting("Sniper B", 1)                ; Strong -> First
     Targeting("Sniper B", 1, 2)             ; Camo Priority

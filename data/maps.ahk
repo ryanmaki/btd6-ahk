@@ -62,26 +62,30 @@ global MAPS := [
         ["Spice Islands", SPICE_ISLANDS_DATA]
     ],
     [
+        ["Last Resort", LAST_RESORT_DATA],
+        ["Ancient Portal", ANCIENT_PORTAL_DATA],
         ["Castle Revenge", CASTLE_REVENGE_DATA],
         ["Dark Path", DARK_PATH_DATA],
         ["Erosion", EROSION_DATA],
         ["Midnight Mansion", MIDNIGHT_MANSION_DATA],
-        ["Sunken Columns", SUNKEN_COLUMNS_DATA],
-        ["X Factor", X_FACTOR_DATA]
     ],
     [
+        ["Sunken Columns", SUNKEN_COLUMNS_DATA],
+        ["X Factor", X_FACTOR_DATA],
         ["Mesa", MESA_DATA],
         ["Geared", GEARED_DATA],
         ["Spillway", SPILLWAY_DATA],
-        ["Cargo", CARGO_DATA],
-        ["Pat's Pond", PATS_POND_DATA],
-        ["Peninsula", PENINSULA_DATA]
+        ["Cargo", CARGO_DATA]
     ],
     [
+        ["Pat's Pond", PATS_POND_DATA],
+        ["Peninsula", PENINSULA_DATA],
         ["High Finance", HIGH_FINANCE_DATA],
         ["Another Brick", ANOTHER_BRICK_DATA],
         ["Off the Coast", OFF_THE_COAST_DATA],
-        ["Cornfield", CORNFIELD_DATA],
+        ["Cornfield", CORNFIELD_DATA]
+    ],
+    [
         ["Underground", UNDERGROUND_DATA]
     ],
     [

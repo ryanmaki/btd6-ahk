@@ -18,6 +18,8 @@ DarkCastleAlternate() {
         "Sub C", ["sub", [1084, 832]]
     )
 
+    CheckDoubleCash()
+
     StartGame()
     Place("Ninja")
     Place("Dart A", true)

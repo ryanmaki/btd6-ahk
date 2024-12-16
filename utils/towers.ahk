@@ -35,24 +35,18 @@ Place(tower, asap := false) {
     Sleep(200)
 }
 
-Targeting(tower, tabCount, option := 1) {
+Targeting(tower, tabCount, option := false) {
     if defeated {
         return
     }
     Open(tower)
-    if option = 2 {
-        sleep(200)
+    if option {
+        Sleep(200)
+        Send(KEYS["special"])
+        Sleep(200)
     }
     Loop tabCount {
-        if option = 2 {
-            if menuside = "L" {
-                Click(360, 320)
-            } else {
-                Click(1580, 320)
-            }
-        } else {
-            Send(KEYS["targeting"])
-        } 
+        Send(KEYS["targeting"])
         Sleep(100)
     }
     Close()
