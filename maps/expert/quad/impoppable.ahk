@@ -6,6 +6,7 @@ QuadImpoppable() {
         "Alch C", ["alch", [1056, 578]],
         "Ben", ["hero", [1345, 222]],
         "Boomer A", ["boomer", [762, 841]],
+        "Boomer B", ["boomer", [996, 351]],
         "Dart A", ["dart", [400, 560]],
         "Dart B", ["dart", [831, 270]],
         "Dart C", ["dart", [1282, 560]],
@@ -13,8 +14,7 @@ QuadImpoppable() {
         "Dart E", ["dart", [514, 334]],
         "Dart F", ["dart", [530, 794]],
         "Druid A", ["druid", [1102, 288]],
-        "Druid B", ["druid", [997, 350]],
-        "Druid C", ["druid", [1145, 450]],
+        "Druid B", ["druid", [1145, 450]],
         "Farm A", ["farm", [1064, 185]],
         "Farm B", ["farm", [1226, 185]],
         "Farm C", ["farm", [1330, 325]],
@@ -25,8 +25,6 @@ QuadImpoppable() {
         "Sub A", ["sub", [883, 427]],
         "Village A", ["village", [1190, 323]],
         "Village B", ["village", [1056, 417]],
-        ; "Alch A", ["alch", [822, 389]],       Original Alch A placement. Testing new one that should only hit Sub A
-        ; "Druid B", ["druid", [976, 335]],     Original Druid B placement. Testing new one to get this out of the way of Alch A buff
     )
 
     UpdateMouseRest("Farm A")               ; Hover Farm A
@@ -103,22 +101,21 @@ QuadImpoppable() {
     Upgrade("Farm C", 0, 0, 3, true)        ; 200 -> 203
     UpdateMouseRest("Farm A", "Farm B")     ; Hover Farm A, B
     
-    WaitForRound(43)
+    WaitForRound(42)
     Place("Druid A", true)
     Upgrade("Druid A", 0, 3, 0, true)       ; 000 -> 030
-    Upgrade("Druid A", 1, 0, 0, true)       ; 030 -> 130
+    Place("Boomer B", true)
+    Upgrade("Boomer B", 4, 0, 2, true)      ; 000 -> 402
     Place("Village B", true)
+    Upgrade("Village B", 0, 2, 0, true)     ; 002 -> 022
+    Upgrade("Farm B", 0, 0, 3, true)        ; 200 -> 203
+    UpdateMouseRest("Farm A")               ; Hover Farm A
+    Upgrade("Farm A", 0, 0, 3, true)        ; 200 -> 203
     Upgrade("Village B", 0, 0, 2, true)     ; 000 -> 002
     Place("Druid B", true)
     Upgrade("Druid B", 0, 3, 0, true)       ; 000 -> 030
-    Upgrade("Farm B", 0, 0, 3, true)        ; 200 -> 203
-    UpdateMouseRest("Farm A")               ; Hover Farm A
-    Place("Druid C", true)
-    Upgrade("Druid C", 0, 3, 0, true)       ; 000 -> 030
-    Upgrade("Village B", 0, 2, 0, true)     ; 002 -> 022
-    Upgrade("Farm A", 0, 0, 3, true)        ; 200 -> 203
+    Upgrade("Druid A", 1, 0, 0, true)       ; 030 -> 130
     Upgrade("Druid B", 1, 0, 0, true)       ; 030 -> 130
-    Upgrade("Druid C", 1, 0, 0, true)       ; 030 -> 130
     
     WaitForRound(49)
     Place("Sniper B", true)
@@ -183,6 +180,7 @@ QuadImpoppable() {
     Sell("Farm B")
     Sell("Farm C")
     Upgrade("Ace A", 0, 0, 1, true)         ; 204 -> 205
+    Sleep(8000)
     Remove(835, 34, 945, 320)               ; remove top
     Remove(140, 530, 459, 627)              ; remove left
     Remove(1500, 530, 1430, 627)            ; remove right
@@ -190,7 +188,7 @@ QuadImpoppable() {
     Upgrade("Village B", 0, 1, 0, true)     ; 022 -> 032
 
     WaitForRound(83)
-    Upgrade("Druid C", 0, 2, 0, true)       ; 130 -> 150
+    Upgrade("Druid B", 0, 2, 0, true)       ; 130 -> 150
 
     WaitForRound(85)
     Place("Spike A", true)
