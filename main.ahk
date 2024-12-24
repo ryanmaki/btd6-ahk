@@ -25,6 +25,7 @@ Start() {
             Case "map_selection":
                 MapSelection()
             Case "in_game","apopalypse":
+                Sleep(500)      ; give time for possible start of game popup to appear
                 InGame()
             Case "collect":
                 OpenBoxes()
@@ -80,16 +81,8 @@ CheckSettings() {
 }
 
 InGame() {
-    if difficulty == "impoppable" {
-        Loop 2 {
-            if ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790) {
-                LogMsg("Game is about to start.")
-                break
-            }
-            LogMsg("Ok button at start of game not found.")
-            Sleep 2000
-        }
-    }
+    ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790)
+    
     if changeSettings {
         CheckSettings()
     }
