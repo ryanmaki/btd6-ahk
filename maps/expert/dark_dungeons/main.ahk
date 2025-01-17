@@ -7,5 +7,6 @@ DARK_DUNGEONS_DATA := Map(
     "easy", [DarkDungeonsEasy, ""],
     "impoppable", [DarkDungeonsImpoppable, "benjamin"],
     "hard", [DarkDungeonsHard, "benjamin"],
-    "alternate", [DarkDungeonsAlternate, "benjamin"],
+    ; commenting out alternate because havent tested. works with dc
+    ; "alternate", [DarkDungeonsAlternate, "benjamin"],
 )

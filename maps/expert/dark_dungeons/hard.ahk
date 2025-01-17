@@ -35,10 +35,10 @@ DarkDungeonsHard() {
     Place("Dart A", true)
     Place("Dart B", true)
     Place("Dart C", true)
-    Place("Sub A", true)
     
     StartGame()
-
+    
+    Place("Sub A", true)
     Place("Dart D",  true)
     Targeting("Dart D", 3)                  ; First -> Strong
     Place("Dart E", true)

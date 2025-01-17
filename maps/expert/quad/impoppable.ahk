@@ -26,7 +26,9 @@ QuadImpoppable() {
         "Village A", ["village", [1190, 323]],
         "Village B", ["village", [1056, 417]],
     )
-
+    
+    CheckDoubleCash()
+    
     UpdateMouseRest("Farm A")               ; Hover Farm A
 
     Place("Dart A")

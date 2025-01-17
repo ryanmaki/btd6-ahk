@@ -7,5 +7,6 @@ SANCTUARY_DATA := Map(
     "easy", [SanctuaryEasy, ""],
     "impoppable", [SanctuaryImpoppable, "benjamin"],
     "hard", [SanctuaryHard, "benjamin"],
+    ; commenting out alternate for now. should work with dc, untested with normal
     ; "alternate", [SanctuaryAlternate, "benjamin"]
 )

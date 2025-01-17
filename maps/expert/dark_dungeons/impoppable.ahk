@@ -41,7 +41,7 @@ DarkDungeonsImpoppable() {
     StartGame()
 
     WaitForRound(7)
-    Place("Dart D")
+    Place("Dart D", true)
     Targeting("Dart D", 3)                  ; First -> Strong
 
     WaitForRound(9)
@@ -51,7 +51,7 @@ DarkDungeonsImpoppable() {
     Sleep(10000)                            ; Wait to save some cash before selling
     Sell("Dart C")
     RightTrap()
-    Place("Ben")
+    Place("Ben", true)
 
     WaitForRound(14)
     Place("Sub A", true)

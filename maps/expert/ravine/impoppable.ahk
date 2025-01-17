@@ -28,11 +28,12 @@ RavineImpoppable() {
         "Village E", ["village", [738, 286]],
     )
 
-    Place("Dart A")
+    CheckDoubleCash()
+    Place("Dart A", true)
     Targeting("Dart A", 3)                          ; First -> Strong
-    Place("Dart B")
-    Place("Dart C")
-    Place("Dart D")
+    Place("Dart B", true)
+    Place("Dart C", true)
+    Place("Dart D", true)
     Targeting("Dart D", 3)                          ; First -> Strong
     UpdateMouseRest("Farm A", "Farm B", "Farm C")   ; Hover Farm A, B, C
 

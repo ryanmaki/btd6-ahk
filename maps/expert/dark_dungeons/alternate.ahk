@@ -1,4 +1,4 @@
-; copied from DarkDungeonsImpoppable(). may need to adjust
+; copied from DarkDungeonsImpoppable(). should work with DC, have tested with normal
 DarkDungeonsAlternate() {
     global TS := Map(
         "Ace A", ["ace", [1073, 663]],
@@ -46,7 +46,9 @@ DarkDungeonsAlternate() {
     Place("Ben", true)
     Place("Sub A", true)
     Place("Sniper B", true)
+    Upgrade("Sniper B", 1, 1, 0, true)      ; 000 -> 110
     Targeting("Sniper B", 3)                ; First -> Strong
+    Upgrade("Sniper A", 1, 1, 0, true)      ; 000 -> 110       
     Place("Druid A", true)
     Upgrade("Druid A", 1, 0, 0, true)       ; 000 -> 100
     Targeting("Druid A", 3)                 ; First -> Strong
@@ -58,12 +60,10 @@ DarkDungeonsAlternate() {
     Upgrade("Dart A", 0, 0, 3, true)        ; 000 -> 003
     Upgrade("Dart E", 0, 0, 3, true)
     Upgrade("Dart C", 0, 0, 3, true)
-    Upgrade("Sniper A", 1, 0, 0, true)      ; 000 -> 100
-    Upgrade("Sniper B", 1, 0, 0, true)      ; 000 -> 100         
     Upgrade("Druid A", 0, 3, 0, true)       ; 100 -> 130
-    Upgrade("Sniper A", 0, 2, 0, true)      ; 100 -> 120
+    Upgrade("Sniper A", 0, 1, 0, true)      ; 110 -> 120
     Targeting("Sniper A", 1, true)                ; Strong -> First
-    Upgrade("Sniper B", 0, 2, 0, true)      ; 100 -> 120
+    Upgrade("Sniper B", 0, 1, 0, true)      ; 100 -> 120
     Targeting("Sniper B", 1, true)                ; Strong -> First
     Place("Farm B", true)
     UpdateMouseRest("Farm A", "Farm B")     ; Hover Farm A, B

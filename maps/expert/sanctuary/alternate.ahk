@@ -84,7 +84,7 @@ SanctuaryAlternate() {
     Upgrade("Dart B 2", 0, 0, 2, true)      ; 000 -> 002
 
     WaitForRound(10, 200)
-    Upgrade("Sub A 1", 1, 0, 1, true)       ; 100 -> 201
+    Upgrade("Sub A 2", 1, 0, 1, true)       ; 100 -> 201
 
     WaitForRound(18, 200)
     Sell("Dart C 2")

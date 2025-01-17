@@ -177,6 +177,9 @@ DarkCastleImpoppable() {
     Open("Sniper A")
     WaitForUpgrade(1)
     Close()
+    if double_cash {
+        Sleep(15000)
+    }
     Sell("Village A")
     Sell("Village B")
     Sell("Farm A")
