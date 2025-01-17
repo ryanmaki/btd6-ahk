@@ -21,6 +21,7 @@ KEYS := Map(
     "ninja",        "{sc020}",
     "alch",         "{sc021}",
     "druid",        "{sc022}",
+    "mermonkey",    "{sc018}",
 
     "farm",         "{sc023}",      ; Support towers
     "spike",        "{sc024}",

@@ -125,7 +125,7 @@ GetRandom(ground_position, water_position) {
     allTowers := [
         "dart","boomer","bomb","tack","ice","glue",
         "sniper","sub","boat","ace","heli","mortar","dartling",
-        "wizard","super","ninja","alch","druid",
+        "wizard","super","ninja","alch","druid", "mermonkey",
         "spike","village","engineer","beast"
     ]
     tower := allTowers[Random(1, 22)]
