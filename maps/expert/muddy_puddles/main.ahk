@@ -2,7 +2,7 @@
 #Include impoppable.ahk
 #Include hard.ahk
 #Include alternate.ahk
-#Include chimps.ahk
+; #Include chimps.ahk
 
 MUDDY_PUDDLES_DATA := Map(
     "easy", [MuddyPuddlesEasy, ""],
