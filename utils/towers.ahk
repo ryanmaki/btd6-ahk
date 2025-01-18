@@ -22,7 +22,7 @@ Place(tower, asap := false) {
                 ScreenRecordDefeat()
                 break
             }
-            CheckLevelUp()
+            CheckInterrupt()
             UpdateRound()
         }
     } else {

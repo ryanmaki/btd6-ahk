@@ -31,6 +31,18 @@ CheckInstaMonkey() {
     }
 }
 
+CheckInGameMsg() {
+    if ClickImage("buttons\ok", , "*TransBlack", 760, 660, 1160, 860) {
+        LogMsg("Cleared in game message")
+    }
+}
+
+CheckInterrupt() {
+    CheckLevelUp()
+    CheckInstaMonkey()
+    CheckInGameMsg()
+}
+
 CheckPauseMenu() {
     MouseMove(1, 1)
     Sleep(500)
@@ -67,7 +79,7 @@ WaitForRound(round, delay := 0) {
             LogMsg("Found victory on R" currentRound " when waiting for R" round)
             break
         }
-        CheckLevelUp()
+        CheckInterrupt()
     }
 }
 
@@ -91,8 +103,7 @@ WaitForVictoryOrDefeat() {
             LogMsg("Defeat on round " currentRound)
             break
         }
-        CheckInstaMonkey()
-        CheckLevelUp()
+        CheckInterrupt()
         UpdateRound()
         Sleep(2000)
     }
@@ -122,7 +133,7 @@ WaitForUpgrade(path) {
             LogMsg("Found victory instead of upgrade " path " on " toweropen)
             break
         }
-        CheckLevelUp()
+        CheckInterrupt()
         UpdateRound()
     }
 }
@@ -148,7 +159,7 @@ WaitForAbility(tower, ability, position, delay := 0) {
             LogMsg("Found victory instead of ability " ability " from " tower)
             break
         }
-        CheckLevelUp()
+        CheckInterrupt()
         UpdateRound()
     }
 }
@@ -168,4 +179,5 @@ Wait(delay) {
     if SearchImage("states\defeat") or SearchImage("states\victory") or CheckInstaMonkey() {
         global defeated := true
     }
+    CheckInterrupt()
 }
