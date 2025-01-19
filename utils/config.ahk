@@ -16,3 +16,5 @@ powerSettings := IniRead("config.ini", "settings", "allowPowers", "true") == "tr
 enableRecordDefeat := IniRead("config.ini", "settings", "enableRecordDefeat", false) == "true"
 
 enableInstaScreenshot := IniRead("config.ini", "settings", "enableInstaScreenshot", false) == "true"
+
+enableUnlockTier := IniRead("config.ini", "settings", "enableUnlockTier", false) == "true"

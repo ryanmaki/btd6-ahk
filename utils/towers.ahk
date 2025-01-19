@@ -63,6 +63,7 @@ Upgrade(tower, topCount, middleCount, bottomCount, asap := false) {
             WaitForUpgrade(1)
         }
         Send(KEYS["upgrade_1"])
+        UnlockTier(1, asap)
         Sleep(100)
     }
     Loop middleCount {
@@ -71,6 +72,7 @@ Upgrade(tower, topCount, middleCount, bottomCount, asap := false) {
             WaitForUpgrade(2)
         }
         Send(KEYS["upgrade_2"])
+        UnlockTier(2, asap)
         Sleep(100)
     }
     Loop bottomCount {
@@ -79,6 +81,7 @@ Upgrade(tower, topCount, middleCount, bottomCount, asap := false) {
             WaitForUpgrade(3)
         }
         Send(KEYS["upgrade_3"])
+        UnlockTier(3, asap)
         Sleep(100)
     }
     Close()
@@ -243,4 +246,90 @@ Aim(tower, x, y) {
     Click(x,y)
     Sleep(100)
     Close()
+}
+
+/* 
+    WARNING: KEEP DISABLED ON HARDER DIFFICULTIES/MAPS/STRATEGIES OR IF YOU
+    HAVE ALL TOWER TIERS UNLOCKED (5 TIERS ON EACH PATH). THIS CHECK ADDS A 
+    DELAY IN THE STRATEGY WHICH CAN CAUSE CERTAIN PRECISE STRATS TO FAIL.
+
+    About: Recognizes the TowerXP menu has been opened after an upgrade attempt 
+    due to the upgrade not being unlocked. This unlocks the upgrade if enough 
+    tower xp, returns back to the game(exits menu), and applies the intended 
+    upgrade. This should only be used/enabled if you don't have full tower XP.
+
+    To enable: set enableUnlockTier=true in config.ini
+    Path assignment: 1 = top, 2 = middle, 3 = bottom
+*/
+UnlockTier(path, asap) {
+    
+    if !enableUnlockTier {                                                          ; only run UnlockTier() if enabled
+        LogMsg("Skipping UnlockTier() because enableUnlockTier = " 
+        enableUnlockTier, true)
+        return
+    }
+
+    LogMsg("Running Unlock Path. Path: " path " | asap: " asap, true)
+    Sleep(500)              
+    if SearchImage("states\towerxp_menu")  {
+        exitMenuDelay := 400                                                        ; Time it takes to exit xp menu and return to game to load
+        xCoord := 625, yCoord := 330                                                ; Coords(xCoord, yCoord) of path-1(top) tier-1(first) upgrade  
+        xGap := 204, yGap := 218                                                    ; xGap = distance between each tier | yGap = distance between each path
+
+        yCoord += yGap * (path - 1)                                                 ; Calculate the yCoord of the given path.    
+    
+        loop 5 {                                                                    ; Go through each tier of a path until you reach the tier needing unlocked
+            LogMsg("UnlockTier() loop count: " A_Index, true)
+            LogMsg("Coord value: " xCoord ", " yCoord, true)
+            Click(xCoord, yCoord)                                                   ; Click tier
+            Sleep(300)                                                              ; Wait for potential game changes to the display/load   
+            LogMsg("Going through towerXP conditionals", true)
+
+            /* 
+                The previous Click() causes the lower left area of the Tower XP 
+                menu to change depending on if the selected tier:
+                    - is already unlocked
+                    - has not been unlocked, but can be
+                    - has not been unlocked, but not enough xp to do so
+                The 3 following if statements respectively handle each
+            */
+            if SearchImage("states\towerxp_unlocked", ,200, 675, 495, 900) {        ; Tier Already Unlocked - move onto the next
+                LogMsg("Tier-" A_Index " | Path-" path
+                " already unlocked.", true)
+                xCoord += xGap                                                      ; Set coord to next tier
+                continue                                                            ; Skip to next loop iteration
+            }
+    
+            if ClickImage("states\towerxp_ready", 1500, , 200, 705, 250, 755) {     ; Tier Ready To Unlock - ClickImage() clicks the button that unlocks the upgrade
+                LogMsg("Tier-" A_Index " | Path-" path " now unlocked." )
+                Send("{Escape}")                                                    ; Leave TowerXP menu
+                Sleep(exitMenuDelay)                                                ; Make sure fully out of towerXP menu
+                if asap {                                                           ; Wait until enough cash to upgrade
+                    Sleep(100)
+                    WaitForUpgrade(path)
+                }
+                Send(KEYS["upgrade_" path])                                         ; Buy intended upgrade
+                break                                                               ; Stop looping through tiers
+            }
+    
+
+            /* 
+                This shouldn't ever get triggered because the TowerXP menu only 
+                opens when enough xp is available to unlock and upgrade after
+                the upgrade keybind is pressed. If it does trigger, it just 
+                backs out of the TowerXP menu and resumes playing. The strat
+                will likely fail and repeat until enough xp for upgrade. 
+            */
+            if SearchImage("states\towerxp_notready", , 200, 705, 250, 755) {       
+                LogMsg("Tier-" A_Index " | Path-" path 
+                " not enough xp. Leaving towerxp menu" )
+
+                Send("{Escape}")                                                    ; Leave TowerXP menu
+                Sleep(exitMenuDelay)                                                ; Make sure fully out of TowerXP menu
+                break                                                               ; Stop looping through tiers                                                   
+            }
+            xCoord += xGap                                                          ; Set coord to next tier for next loop 
+        }
+    }
+    LogMsg("UnlockTier() complete", true)
 }
