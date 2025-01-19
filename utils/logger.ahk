@@ -4,11 +4,15 @@ ClearLogFile() {
     }
 }
 
-LogMsg(msg) {
+LogMsg(msg, detailedMsg := false) {
     if logging {
+        if detailedMsg && !detailedLogging {
+            return
+        }
         if msg == "Victory" || msg == "Defeat" {
             msg := msg VictoryDefeatText()
         }
+
         FileAppend("[" FormatTime(, "yyyy-MM-ddTHH:mm:ss") "] " msg "`n", logFile)
     }
 }
@@ -55,7 +59,7 @@ ScreenRecordDefeat(msg?) {
 ; Takes and saves a screenshot only if one hasn't been taken during the current cycle of featured event instas
 ScreenshotInstas() { 
     if !enableInstaScreenshot {
-        ; LogMsg("Screenshot disabled")
+        LogMsg("Screenshot disabled", true)
         return   
     }
 

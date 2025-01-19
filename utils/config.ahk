@@ -5,6 +5,7 @@ overwriteSave := IniRead("config.ini", "settings", "overwriteSave", false) == "t
 
 logging := IniRead("config.ini", "settings", "logging", false) == "true"
 logFile := IniRead("config.ini", "settings", "logFile", "logs\" FormatTime(, "yyyyMMdd-HHmmss") ".log")
+detailedLogging := IniRead("config.ini", "settings", "detailedLogging", false) == "true"
 
 userDifficulty := IniRead("config.ini", "settings", "difficulty", "")
 

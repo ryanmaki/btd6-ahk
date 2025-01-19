@@ -9,7 +9,7 @@ UpdateMouseRest(towers*) {
         ySum += TS[tower][2][2]
     }
     coords := [(xSum // count), (ySum // count)]
-    ; LogMsg("xSum: " xSum " ySum: " ySum " tower count: " count " mouseRest coord: [" coords[1] ", " coords[2] "]" )
+    LogMsg("xSum: " xSum " ySum: " ySum " tower count: " count " mouseRest coord: [" coords[1] ", " coords[2] "]", true)
     global mouseRest := coords
 }
 

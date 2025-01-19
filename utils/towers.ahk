@@ -160,6 +160,7 @@ Close() {
         Sleep(100)
         MouseMove(mouseRest[1], mouseRest[2])
         Sleep(100)
+    LogMsg("Close() complete", true)
 }
 
 Ability(tower, ability, position, asap := false) {
