@@ -22,7 +22,8 @@ Place(tower, asap := false) {
                 ScreenRecordDefeat()
                 break
             }
-            CheckInterrupt()
+            CheckLevelUp()
+            CheckInGameMsg()
             UpdateRound()
         }
     } else {

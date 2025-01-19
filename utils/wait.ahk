@@ -14,11 +14,30 @@ UpdateMouseRest(towers*) {
 }
 
 CheckLevelUp() {
-    if SearchImage("states\level_up",, 982, 537, 1084, 603) {
+    if SearchImage("states\level_up", , 982, 537, 1084, 603) {
+        global toweropen
+        okMsg := false
+
         LogMsg("Level up detected")
-        Loop 2 {
+        Click(6, 4)
+        
+        Loop {
+            if !SearchImage("states\level_up2", , 1675, 10, 1865, 75){
+                break
+            }
             Click(6, 4)
             Sleep(2000)
+
+            ; clear the first time getting MK interrupt message
+            if ClickImage("buttons\ok", , "*TransBlack", 760, 660, 1160, 860) {
+                okMsg := true
+            }
+        }
+
+        ; reselects the tower if the MK interrupt message occurs
+        if okMsg && toweropen != "" {
+            Open(toweropen)
+            LogMsg("Cleared in game message within CheckLevelUp()", true)
         }
         MouseMove(mouseRest[1], mouseRest[2])
     }
@@ -31,10 +50,27 @@ CheckInstaMonkey() {
     }
 }
 
+/* 
+    Looks for the in game interrupt that displays an ok button to acknowledge.
+    About the interrupt:
+        - occurs at the start of some game modes or the first time an account 
+        experiences certain types of bloons (regrow, ZOMG, BAD, etc)
+        - if a placed tower is Open() aka selected at the time of interrupt,
+        the tower will automatically close 
+*/ 
 CheckInGameMsg() {
     if ClickImage("buttons\ok", , "*TransBlack", 760, 660, 1160, 860) {
-        LogMsg("Cleared in game message")
+        global toweropen
+
+        ; reselects the tower if it was already selected at the time of interrupt
+        if toweropen != "" {
+            Open(toweropen)
+        }
+        LogMsg("Cleared in game message", true)
+
+        MouseMove(mouseRest[1], mouseRest[2])
     }
+    Sleep(1000)
 }
 
 CheckInterrupt() {
@@ -79,7 +115,8 @@ WaitForRound(round, delay := 0) {
             LogMsg("Found victory on R" currentRound " when waiting for R" round)
             break
         }
-        CheckInterrupt()
+        CheckLevelUp()
+        CheckInGameMsg()
     }
 }
 
@@ -103,7 +140,9 @@ WaitForVictoryOrDefeat() {
             LogMsg("Defeat on round " currentRound)
             break
         }
-        CheckInterrupt()
+        CheckInstaMonkey()
+        CheckLevelUp()
+        CheckInGameMsg()
         UpdateRound()
         Sleep(2000)
     }
@@ -133,7 +172,8 @@ WaitForUpgrade(path) {
             LogMsg("Found victory instead of upgrade " path " on " toweropen)
             break
         }
-        CheckInterrupt()
+        CheckLevelUp()
+        CheckInGameMsg()
         UpdateRound()
     }
 }
@@ -159,7 +199,8 @@ WaitForAbility(tower, ability, position, delay := 0) {
             LogMsg("Found victory instead of ability " ability " from " tower)
             break
         }
-        CheckInterrupt()
+        CheckLevelUp()
+        CheckInGameMsg()
         UpdateRound()
     }
 }
@@ -179,5 +220,6 @@ Wait(delay) {
     if SearchImage("states\defeat") or SearchImage("states\victory") or CheckInstaMonkey() {
         global defeated := true
     }
-    CheckInterrupt()
+    CheckLevelUp()
+    CheckInGameMsg()
 }
