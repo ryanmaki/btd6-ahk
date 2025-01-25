@@ -273,7 +273,7 @@ UnlockTier(path, asap) {
     LogMsg("Running Unlock Path. Path: " path " | asap: " asap, true)
     Sleep(500)              
     if SearchImage("states\towerxp_menu")  {
-        exitMenuDelay := 400                                                        ; Time it takes to exit xp menu and return to game to load
+        exitMenuDelay := 400                                                        ; Time to exit xp menu and return to map
         xCoord := 625, yCoord := 330                                                ; Coords(xCoord, yCoord) of path-1(top) tier-1(first) upgrade  
         xGap := 204, yGap := 218                                                    ; xGap = distance between each tier | yGap = distance between each path
 
@@ -284,6 +284,9 @@ UnlockTier(path, asap) {
             LogMsg("Coord value: " xCoord ", " yCoord, true)
             Click(xCoord, yCoord)                                                   ; Click tier
             Sleep(300)                                                              ; Wait for potential game changes to the display/load   
+            Click(xCoord, yCoord)                                                   ; Click tier again just in case interrupt message
+            Sleep(300)                                                              ; Wait for potential game changes to the display/load   
+            
             LogMsg("Going through towerXP conditionals", true)
 
             /* 
