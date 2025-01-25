@@ -53,7 +53,9 @@ GeneralHard() {
     
     Place("VillageA", true)
     Upgrade("VillageA", 2, 2, 0, true)      ; 000 -> 220
+
+    Upgrade("SniperA", 1, 0, 1, true)       ; 103 -> 204
+    Upgrade("DruidA", 0, 1, 0, true)        ; 130 -> 140
     
     Upgrade("AceA", 0, 0, 1, true)          ; 203 -> 204
-    Upgrade("DruidA", 0, 2, 0, true)        ; 130 -> 150
 }
