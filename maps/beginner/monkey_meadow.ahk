@@ -36,6 +36,11 @@ MonkeyMeadowHard() {
         "AceE", ["ace", [946, 355]],
         "AceF", ["ace", [743, 325]],
         "AceG", ["ace", [470, 532]],
+        "DruidC", ["druid", [498, 663]],
+        "DruidD", ["druid", [499, 731]],
+        "DruidE", ["druid", [421, 659]],
+        "DruidF", ["druid", [374, 716]],
+        "DruidG", ["druid", [469, 792]],
     )
     
     Place("DartA", true)
@@ -75,6 +80,7 @@ MonkeyMeadowHard() {
     Place("DartC", true)
     Upgrade("DartC", 0, 2, 3, true)         ; 000 -> 023
 
+    Ability("Hero", 1, 1)
 
     Upgrade("SniperA", 0, 0, 2, true)       ; 100 -> 102
     
@@ -104,15 +110,13 @@ MonkeyMeadowHard() {
     
     Upgrade("AceA", 1, 0, 0, true)          ; 000 -> 100
 
-    Upgrade("FarmB", 0, 0, 2, true)        ; 200 -> 202
-    Sell("FarmB")
-    Upgrade("FarmA", 0, 0, 3, true)        ; 200 -> 203
+    Upgrade("VillageA", 0, 1, 0, true)      ; 100 -> 110
 
-    Upgrade("VillageA", 1, 0, 0, true)      ; 100 -> 200
-    
     Place("AceB", true)
     Place("AceC", true)
-
+    
+    Upgrade("VillageA", 1, 0, 0, true)      ; 110 -> 210
+    
     Upgrade("AceB", 1, 0, 0, true)          ; 000 -> 100
     Upgrade("AceC", 1, 0, 0, true)          ; 000 -> 100
 
@@ -141,10 +145,23 @@ MonkeyMeadowHard() {
     Place("AceE", true)
     Upgrade("AceE", 2, 0, 3, true)          ; 000 -> 203
     
-    Upgrade("VillageA", 0, 2, 0, true)      ; 200 -> 220
+    Upgrade("VillageA", 0, 1, 0, true)      ; 210 -> 220
         
     Place("AceF", true)
     Upgrade("AceF", 2, 0, 3, true)          ; 000 -> 203
 
     Upgrade("AceA", 0, 0, 1, true)          ; 203 -> 204
+
+    Ability("Hero", 1, 2)
+
+    Place("DruidC", true)
+    Upgrade("DruidC", 1, 3, 0, true)        ; 000 -> 130
+    Place("DruidD", true)
+    Upgrade("DruidD", 1, 3, 0, true)        ; 000 -> 130
+    Place("DruidE", true)
+    Upgrade("DruidE", 1, 3, 0, true)        ; 000 -> 130
+    Place("DruidF", true)
+    Upgrade("DruidF", 1, 3, 0, true)        ; 000 -> 130
+    Place("DruidG", true)
+    Upgrade("DruidG", 1, 3, 0, true)        ; 000 -> 130
 }
