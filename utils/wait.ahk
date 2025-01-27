@@ -20,14 +20,14 @@ CheckLevelUp() {
 
         LogMsg("Level up detected")
         Click(6, 4)
-        
+        Sleep(2000)
+
         Loop {
-            if !SearchImage("states\level_up2", , 1675, 10, 1865, 75){
-                break
-            }
             Click(6, 4)
             Sleep(2000)
-
+            if !SearchImage("states\level_up2", "*10", 1675, 10, 1865, 75){
+                break
+            }
             ; clear the first time getting MK interrupt message
             if ClickImage("buttons\ok", , "*Trans0xFF00FF", 760, 660, 1160, 860) {
                 okMsg := true
