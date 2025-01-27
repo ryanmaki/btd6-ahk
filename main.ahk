@@ -81,7 +81,7 @@ CheckSettings() {
 }
 
 InGame() {
-    ClickImage("buttons\ok", 1000, "*TransBlack", 900, 720, 1000, 790)
+    ClickImage("buttons\ok", 1000, "*Trans0xFF00FF", 900, 720, 1000, 790)
     
     if changeSettings {
         CheckSettings()

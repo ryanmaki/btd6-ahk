@@ -74,7 +74,7 @@ SelectMap(page, number) {
 CheckOwerwrite() {
     if SearchImage("states\overwrite") {
         if overwriteSave {
-            ClickImage("buttons\ok", 1000, "*TransBlack", 1080, 700, 1180, 770)
+            ClickImage("buttons\ok", 1000, "*Trans0xFF00FF", 1080, 700, 1180, 770)
         } else {
             LogMsg("Script stopped to protect an existing save")
             Reload()

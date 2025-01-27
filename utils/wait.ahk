@@ -29,7 +29,7 @@ CheckLevelUp() {
             Sleep(2000)
 
             ; clear the first time getting MK interrupt message
-            if ClickImage("buttons\ok", , "*TransBlack", 760, 660, 1160, 860) {
+            if ClickImage("buttons\ok", , "*Trans0xFF00FF", 760, 660, 1160, 860) {
                 okMsg := true
             }
         }
@@ -59,7 +59,7 @@ CheckInstaMonkey() {
         the tower will automatically close 
 */ 
 CheckInGameMsg() {
-    if ClickImage("buttons\ok", , "*TransBlack", 760, 660, 1160, 860) {
+    if ClickImage("buttons\ok", , "*Trans0xFF00FF", 760, 660, 1160, 860) {
         global toweropen
 
         ; reselects the tower if it was already selected at the time of interrupt
