@@ -53,52 +53,59 @@ MonkeyMeadowHard() {
 
     Place("DruidA", true)           
 
-    Upgrade("DartA", 0, 1, 2, true)         ; 000 -> 012
+    Upgrade("DartA", 0, 1, 1, true)         ; 000 -> 011
 
+    WaitForRound(12)
+    Upgrade("DartA", 0, 0, 1, true)         ; 011 -> 012
     Upgrade("DruidA", 0, 1, 0, true)        ; 000 -> 010
 
+    WaitForRound(18)
     Place("FarmA", true)
     UpdateMouseRest("FarmA")
-
     Place("DartB", true)
     Upgrade("DartB", 0, 1, 2, true)         ; 000 -> 012
 
-    Upgrade("FarmA", 2, 0, 0, true)         ; 000 -> 200
+    WaitForRound(21)
+    Upgrade("FarmA", 1, 0, 0, true)         ; 000 -> 100
 
+    WaitForRound(26)
+    Upgrade("FarmA", 1, 0, 0, true)         ; 000 -> 100
     Upgrade("DartA", 0, 1, 0, true)         ; 012 -> 022
     Upgrade("DartB", 0, 1, 0, true)         ; 012 -> 022
-    
     Upgrade("SniperA", 1, 0, 0, true)       ; 000 -> 100
 
+    WaitForRound(29)
     Upgrade("DartA", 0, 0, 1, true)         ; 022 -> 023
     Upgrade("DartB", 0, 0, 1, true)         ; 022 -> 023
     
+    WaitForRound(30)
     Place("FarmB", true)
     UpdateMouseRest("FarmA", "FarmB")
     Upgrade("FarmB", 2, 0, 0, true)         ; 000 -> 200
-
     Place("DartC", true)
     Upgrade("DartC", 0, 2, 3, true)         ; 000 -> 023
-
     Ability("Hero", 1, 1)
 
+    WaitForRound(34)
     Upgrade("SniperA", 0, 0, 2, true)       ; 100 -> 102
     
+    WaitForRound(36)
     Place("SniperB", true)
     Upgrade("SniperB", 1, 0, 2, true)       ; 000 -> 102
 
     Place("SniperC", true)
     Upgrade("SniperC", 1, 0, 2, true)       ; 000 -> 102
 
+    WaitForRound(39)
     Place("DartD", true)
     Upgrade("DartD", 0, 2, 3, true)         ; 000 -> 023
-    
     Place("VillageA", true)
-
     Upgrade("DruidA", 1, 1, 0, true)        ; 010 -> 120
 
+    WaitForRound(41)
     Upgrade("SniperA", 0, 0, 1, true)       ; 102 -> 103
-    Sell("SniperB") 
+    Sell("SniperB")
+    Sleep(500) 
     Sell("SniperC")
 
     Upgrade("VillageA", 1, 0, 0, true)      ; 000 -> 100
@@ -106,15 +113,18 @@ MonkeyMeadowHard() {
     Place("AceA", true)
     
     Place("DruidB", true)   
-    Upgrade("DruidB", 1, 3, 0, true)        ; 000 -> 130
+    Upgrade("DruidB", 1, 2, 0, true)        ; 000 -> 120
     
+    WaitForRound(43)
+    Upgrade("DruidB", 0, 1, 0, true)        ; 120 -> 130
+
+    WaitForRound(46)
     Upgrade("AceA", 1, 0, 0, true)          ; 000 -> 100
-
     Upgrade("VillageA", 0, 1, 0, true)      ; 100 -> 110
-
     Place("AceB", true)
     Place("AceC", true)
     
+    WaitForRound(53)
     Upgrade("VillageA", 1, 0, 0, true)      ; 110 -> 210
     
     Upgrade("AceB", 1, 0, 0, true)          ; 000 -> 100
