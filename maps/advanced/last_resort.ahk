@@ -1,14 +1,13 @@
 LAST_RESORT_DATA := Map(
-    ; "easy", [LastResortEasy, ""]
+    "easy", [LastResortEasy, ""]
 )
 
-; Placements were taken from another strat using GeneralEasy. Need to adjust tower coords to work with map.
 LastResortEasy() {
     global TS := Map(
-        "Dart", ["dart", [975, 435]],
-        "Druid A", ["druid", [1099, 360]],
-        "Druid B", ["druid", [980, 552]],
-        "Sniper", ["sniper", [1154, 567]]
+        "Dart", ["dart", [930, 54]],
+        "Druid A", ["druid", [1317, 54]],
+        "Druid B", ["druid", [1228, 55]],
+        "Sniper", ["sniper", [664, 28]]
     )
     GeneralEasy()
 }

@@ -4,10 +4,10 @@ CASTLE_REVENGE_DATA := Map(
 
 CastleRevengeEasy() {
     global TS := Map(
-        "Dart", ["dart", [750, 476]],
-        "Druid A", ["druid", [814, 504]],
-        "Druid B", ["druid", [901, 622]],
-        "Sniper", ["sniper", [749, 591]]
+        "Dart", ["dart", [1198, 320]],
+        "Druid A", ["druid", [1214, 767]],
+        "Druid B", ["druid", [1166, 415]],
+        "Sniper", ["sniper", [785, 492]]
     )
     GeneralEasy()
 }
