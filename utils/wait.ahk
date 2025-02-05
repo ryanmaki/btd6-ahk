@@ -25,9 +25,17 @@ CheckLevelUp() {
         Loop {
             Click(6, 4)
             Sleep(2000)
+            
             if !SearchImage("states\level_up2", "*10", 1675, 10, 1865, 75){
                 break
             }
+
+            if SearchImage("states\victory") or CheckInstaMonkey() {
+                global defeated := true
+                LogMsg("Found victory on R" currentRound " when waiting for R" round)
+                break
+            }
+
             ; clear the first time getting MK interrupt message
             if ClickImage("buttons\ok", , "*Trans0xFF00FF", 760, 660, 1160, 860) {
                 okMsg := true
