@@ -13,7 +13,7 @@ MapSelection() {
     LogMsg("Selected map: " MAPS[currentMap[1]][currentMap[2]][1])
     SelectDifficulty()
     CheckOwerwrite()
-    Sleep(4000)
+    Sleep(5000)
 }
 
 SelectNextMap() {

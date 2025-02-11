@@ -1,4 +1,4 @@
-SetKeyDelay(5, 150)
+SetKeyDelay(15, 200)
 Place(tower, asap := false) {
     if defeated {
         return

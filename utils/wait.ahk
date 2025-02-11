@@ -32,7 +32,7 @@ CheckLevelUp() {
 
             if SearchImage("states\victory") or CheckInstaMonkey() {
                 global defeated := true
-                LogMsg("Found victory on R" currentRound " when waiting for R" round)
+                LogMsg(A_ThisFunc "() | Found victory on R" currentRound )
                 break
             }
 
@@ -45,7 +45,7 @@ CheckLevelUp() {
         ; reselects the tower if the MK interrupt message occurs
         if okMsg && toweropen != "" {
             Open(toweropen)
-            LogMsg("Cleared in game message within CheckLevelUp()", true)
+            LogMsg(A_ThisFunc "() | Cleared in game message", true)
         }
         MouseMove(mouseRest[1], mouseRest[2])
     }
