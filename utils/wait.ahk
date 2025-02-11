@@ -120,7 +120,7 @@ WaitForRound(round, delay := 0) {
         }
         if SearchImage("states\victory") or CheckInstaMonkey() {
             global defeated := true
-            LogMsg("Found victory on R" currentRound " when waiting for R" round)
+            LogMsg("Found victory on R" currentRound)
             break
         }
         CheckLevelUp()
