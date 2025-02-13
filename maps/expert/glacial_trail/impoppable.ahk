@@ -1,174 +1,307 @@
 GlacialTrailImpoppable() {
     global TS := Map(
-        "Ace A", ["ace", [341, 1006]],
-        "Alch A", ["alch", [1453, 739]],
-        "Alch B", ["alch", [233, 972]],
-        "Druid A", ["druid", [240, 549]],
-        "Farm A", ["farm", [1552, 246]],
-        "Farm B", ["farm", [1560, 106]],
-        "Farm C", ["farm", [1393, 77]],
-        "Farm D", ["farm", [1231, 82]],
-        "Farm E", ["farm", [1250, 237]],
-        "Farm F", ["farm", [110, 976]],
-        "Farm G", ["farm", [1559, 1007]],
-        "Boat A", ["boat", [266, 779]],
-        "Sauda", ["hero", [315, 538]],
-        "Spike A", ["spike", [1426, 669]],
-        "Village A", ["village", [1390, 199]],
-        "Village B", ["village", [1401, 301]],
-        "Village C", ["village", [248, 893]],
-        "Wizard A", ["wizard", [209, 405]],
+        "DartA", ["dart", [211, 410]],
+        "DruidA", ["druid", [1141, 585]],
+        "SpikeA", ["spike", [1432, 670]],
+        "Ben", ["hero", [245, 869]],
+        "DartB", ["dart", [245, 545]],
+        "WizardA", ["wizard", [315, 538]],
+        "WizardB", ["wizard", [212, 406]],
+        "FarmA", ["farm", [1560, 106]],
+        "FarmB", ["farm", [1552, 246]],
+        "FarmC", ["farm", [1393, 77]],
+        "FarmD", ["farm", [1231, 82]],
+        "FarmE", ["farm", [1250, 237]],
+        "VillageA", ["village", [1390, 199]],
+        "VillageB", ["village", [1401, 301]],
+        "IceA", ["ice", [245, 545]],
+        "AlchA", ["alch", [1455, 740]],
+        "AceA", ["ace", [1257, 252]],
+        "AceB", ["ace", [1222, 168]],
+        "AceC", ["ace", [1404, 97]],
+        "AlchB", ["alch", [1231, 68]]
     )
 
-    Place("Sauda", true)
+    /* 
+        ********************* DONT USE CheckDoubleCash() *********************
+        Glacial Trail freezes all non-ice monkey towers every future 10 rounds
+        and the 1 prior after being placed. 
+            Example:
+            - tower placed on round 18 will freeze on 27 and 28 and every x7 
+            and x8 round thereafter
+        When a tower is frozen, it cannot attack nor can it be accessed to
+        perform actions such upgrades or targeting
+    */
+
+    Place("DartA", true)
+    Place("DruidA", true)
+    Targeting("DartA", 3, true)
 
     StartGame()
 
-    WaitForRound(15)
-    Place("Wizard A")
-    Upgrade("Wizard A", 1, 2, 0)              ; 000 -> 120
-    Aim("Wizard A", 411, 467)
+    WaitForRound(8)
+    Place("WizardA", true)
+    
+    WaitForRound(12)
+    Place("SpikeA", true)
+    
+    WaitForRound(14)
+    Place("DartB", true)
+    Targeting("DartB", 3, true)
 
-    WaitForRound(20)
-    Place("Druid A")
-
-    WaitForRound(24)
-    Upgrade("Druid A", 1, 3, 0, true)         ; 000 -> 130
-
-    WaitForRound(32)
-    Place("Spike A")
-    Upgrade("Spike A", 1, 0, 0)             ; 000 -> 100
+    WaitForRound(18)
+    Place("Ben", true)
+    
+    WaitForRound(19)
+    Upgrade("WizardA", 0, 2, 0, true)
+    
+    WaitForRound(22)
+    Upgrade("DruidA", 1, 1, 0, true)
+    
+    WaitForRound(27)
+    Upgrade("DruidA", 0, 2, 0, true)
+    
+    WaitForRound(29)
+    Place("FarmA", true)
+    UpdateMouseRest("FarmA")
+    Upgrade("FarmA", 2, 0, 0, true)
+    
+    WaitForRound(35)
+    Upgrade("WizardA", 0, 1, 0, true)
 
     WaitForRound(36)
-    Upgrade("Wizard A", 0, 1, 0, true)        ; 120 -> 130
-    
-    WaitForRound(37)
-    Place("Farm A", true)
-    UpdateMouseRest("Farm A")               ; hover Farm A
-    Upgrade("Farm A", 2, 0, 0, true)        ; 000 -> 200
+    Upgrade("WizardA", 0, 0, 2, true)
+    Place("FarmB", true)
+    UpdateMouseRest("FarmA","FarmB")
+    Upgrade("FarmB", 2, 0, 0, true)
 
-    WaitForRound(39)
-    Place("Farm B", true)
-    UpdateMouseRest("Farm A", "Farm B")     ; hover Farm A, B
-    Upgrade("Farm B", 2, 0, 0, true)        ; 000 -> 200
-    
+    WaitForRound(38)
+    Place("FarmC", true)
+    UpdateMouseRest("FarmA","FarmB","FarmC")
+    Upgrade("FarmC", 2, 0, 0, true)
+
     WaitForRound(41)
-    Place("Farm C", true)
-    UpdateMouseRest("Farm A", "Farm B", "Farm C")   ; hover Farm A, B, C
-    Sleep(150)
-    Upgrade("Farm C", 2, 0, 0, true)        ; 000 -> 200
-
-    WaitForRound(42)
-    Place("Alch A", true)
+    Sell("DartA")
+    Sell("DartB")
+    Upgrade("FarmA", 0, 0, 3, true)
+    UpdateMouseRest("FarmB","FarmC")
     
-    WaitForRound(43)
-    Upgrade("Spike A", 2, 0, 0, true)       ; 100 -> 300
-    Upgrade("Alch A", 3, 0, 0, true)        ; 000 -> 300
-
-    WaitForRound(47, 3000)
-    Sell("Wizard A")
-    Place("Wizard A", true)
-    Upgrade("Wizard A", 0, 0, 4, true)        ; 000 -> 004
+    WaitForRound(44)
+    Place("WizardB", true)
+    Upgrade("WizardB", 0, 0, 4, true)
+    
+    WaitForRound(45)
+    Upgrade("WizardB", 0, 2, 0, true)
+    
+    WaitForRound(46)
+    Place("VillageA", true)
+    Upgrade("VillageA", 0, 0, 2, true)
     
     WaitForRound(48)
-    Upgrade("Wizard A", 0, 2, 0, true)        ; 004 -> 024
-    Place("Village A", true)
+    Upgrade("FarmB", 0, 0, 3, true)
+    UpdateMouseRest("FarmC")
     
     WaitForRound(49)
-    Upgrade("Village A", 0, 0, 2, true)     ; 000 -> 002
-    Upgrade("Farm A", 0, 0, 3, true)        ; 200 -> 203
-    UpdateMouseRest("Farm B", "Farm C")     ; hover Farm B, C
+    Upgrade("FarmC", 0, 0, 3, true)
+    Place("AceA", true)
+    Upgrade("AceA", 2, 0, 3, true)
+    Recenter("AceA", 1607, 654)
 
-    WaitForRound(50)
-    Upgrade("Farm B", 0, 0, 3, true)        ; 200 -> 203
-    UpdateMouseRest("Farm C")               ; hover Farm C
+    WaitForRound(52)
+    Place("AceB", true)
+    Upgrade("AceB", 2, 0, 3, true)
+    Recenter("AceB", 1607, 654)
+    Place("VillageB", true)
+    Upgrade("VillageB", 0, 0, 2, true)
 
-    Place("Farm D", true)
-    UpdateMouseRest("Farm C", "Farm D")     ; hover Farm C, D
-    Upgrade("Farm D", 0, 0, 3, true)        ; 000 -> 003
-    UpdateMouseRest("Farm C")               ; hover Farm C
-    Upgrade("Farm D", 0, 2, 0, true)        ; 003 -> 023
-    
     WaitForRound(55)
-    Ability("hero", "1", "1")
-    Upgrade("Spike A", 1, 0, 2, true)       ; 300 -> 402
-    Ability("hero", "1", "2")
-    Targeting("Spike A", 3)                 ; Normal -> Smart
-    Upgrade("Farm C", 0, 0, 3, true)        ; 200 -> 203
-    
-    WaitForRound(56)
-    UpdateMouseRest("Farm E")               ; hover Farm E
-    Place("Farm E", true)
-    Upgrade("Farm E", 0, 0, 3, true)        ; 000 -> 003
-    
-    WaitForRound(58)
-    Upgrade("Farm E", 0, 2, 0, true)        ; 003 -> 023
-    UpdateMouseRest("Farm F")               ; hover Farm F
-    Place("Farm F", true)
-    
-    WaitForRound(59)
-    Sell("Village A")
-    Upgrade("Farm F", 0, 2, 3, true)        ; 000 -> 023
+    Sell("SpikeA")
+    Upgrade("VillageB", 0, 0, 2, true)
 
-    WaitForRound(61)
-    Upgrade("Druid A", 0, 1, 0, true)       ; 130 -> 140
+    WaitForRound(57)
+    Upgrade("VillageA", 0, 2, 0, true)
+    Upgrade("VillageB", 2, 0, 0, true)
+    Place("AlchB", true)
+    Upgrade("AlchB", 3, 0, 1, true)
     
+    WaitForRound(63)
+    Sell("FarmC")
+    Upgrade("AceB", 0, 0, 1, true)
+
+    WaitForRound(70)
+    Upgrade("AceA", 0, 0, 1, true)
+    Upgrade("AlchB", 1, 0, 0, true)
+
+    WaitForRound(75)
+    Place("AceC", true)
+    Upgrade("AceC", 2, 0, 3, true)
+    Recenter("AceC", 1607, 654)
+
+    WaitForRound(77)
+    Upgrade("AceC", 0, 0, 1, true)
+
+    WaitForRound(78)
+    Upgrade("VillageA", 0, 1, 0, true)
+
+    WaitForRound(81)
+    Upgrade("DruidA", 0, 2, 0, true)
+
+    WaitForRound(85)
+    Upgrade("WizardB", 0, 0, 1, true)
+
+    WaitForRound(94)
+    Sell("FarmA")
+    Sell("FarmB")
+    Upgrade("AceB", 0, 0, 1, true)
+
+
+/*  
+    Occasionally dying r42, trying 032 wizard
+
+    WaitForRound(32)
+    Sell("DartB")
+    Place("IceA", true)
+    Place("AlchA", true)
+    Upgrade("AlchA", 2, 0, 0, true)
+
+    WaitForRound(33)
+    Upgrade("SpikeA", 0, 0, 2, true)
+    Targeting("SpikeA", 3, true)
+    Upgrade("SpikeA", 0, 0, 1, true)
+    Upgrade("AlchA", 1, 0, 0, true)
+
+    ; MsgBox("Take Manual action now.")
+    Send("!{F9}")
+
+    WaitForRound(37)
+    Place("FarmB", true)
+    UpdateMouseRest("FarmA", "FarmB")
+    Upgrade("FarmB", 2, 0, 0, true)
+
+    WaitForRound(39)
+    Place("FarmC", true)
+    UpdateMouseRest("FarmA","FarmB","FarmC")
+    Upgrade("FarmC", 2, 0, 0, true)
+
+    WaitForRound(40)
+    Place("FarmD", true)
+    UpdateMouseRest("FarmA","FarmB","FarmC","FarmD")
+    Upgrade("FarmD", 2, 0, 0, true)
+
+    WaitForRound(41)
+    Sell("DartA")
+    Upgrade("WizardA", 0, 0, 2, true)
+    Upgrade("IceA", 2, 0, 2, true)
+
+    ; MsgBox("Take Manual action now.")
+
+    WaitForRound(43)
+    Upgrade("FarmD", 0, 0, 3, true)
+    UpdateMouseRest("FarmA","FarmB","FarmC")
+
+    WaitForRound(44)
+    Place("WizardB", true)
+    Upgrade("WizardB", 0, 2, 2, true)
+
+    WaitForRound(45)
+    Upgrade("IceA", 1, 0, 0, true)
+
+    WaitForRound(48)
+    Place("FarmE", true)
+    Upgrade("FarmE", 0, 0, 3, true)
+    Upgrade("FarmE", 0, 2, 0, true)
+    Upgrade("WizardB", 0, 0, 1, true)
+
+    WaitForRound(49)
+    Upgrade("WizardB", 0, 0, 1, true)
+    Place("VillageA", true)
+    Upgrade("VillageA", 0, 0, 2, true)
+    Upgrade("FarmB", 0, 0, 3, true)
+    UpdateMouseRest("FarmA","FarmC")
+    Upgrade("FarmA", 0, 0, 3, true)
+    UpdateMouseRest("FarmC")
+    Upgrade("FarmC", 0, 0, 3, true)
+
+    WaitForRound(53)
+    Upgrade("SpikeA", 0, 0, 1, true)
+    Upgrade("SpikeA", 0, 2, 0, true)
+
+    WaitForRound(57)
+    Place("VillageB", true)
+    Upgrade("VillageB", 0, 0, 2, true)
+    Upgrade("VillageA", 0, 0, 1, true)
+
+    WaitForRound(58)
+    Upgrade("IceA", 1, 0, 0, true)
+
+    WaitForRound(59)
+    Upgrade("WizardA", 0, 1, 0, true)
+
+    WaitForRound(60)
+    Upgrade("VillageA", 0, 0, 1, true)
+
     WaitForRound(62)
-    UpdateMouseRest("Farm G")               ; hover Farm G
-    Place("Farm G", true)
-    Sleep(6000)
-    Ability("hero", "1", "1")
-    Upgrade("Farm G", 0, 0, 3, true)        ; 000 -> 003
-    Upgrade("Farm G", 0, 2, 0, true)        ; 003 -> 023
+    Upgrade("WizardA", 0, 1, 0, true)
+    
+    WaitForRound(63)
+    Ability("WizardA",1,3)
+    Upgrade("DruidA", 0, 1, 0, true)
 
     WaitForRound(65)
-    Place("Village B", true)
-    Upgrade("Village B", 0, 0, 2, true)     ; 000 -> 002
-    Place("Village A", true)
-    Upgrade("Village A", 0, 0, 3, true)     ; 000 -> 003
-    Sell("Village B")
-    Upgrade("Village A", 0, 0, 1, true)     ; 003 -> 004
+    Sell("FarmB")
+    Place("FarmB", true)
+    Upgrade("FarmB", 0, 2, 3, true)
+
+    WaitForRound(66)
+    Sell("FarmE")
+    Upgrade("FarmB", 0, 0, 1, true)
+    
+    WaitForRound(67)
+    Sell("FarmC")
+    Sell("FarmA")
+    Place("FarmA", true)
+    Upgrade("FarmA", 0, 2, 3, true)
 
     WaitForRound(68)
-    Place("Boat A", true)
-    Upgrade("Boat A", 4, 1, 0, true)        ; 000 -> 410
-    
+    Sell("FarmD")
+    Upgrade("FarmA", 0, 0, 1, true)
+    Place("AceA", true)
+    Upgrade("AceA", 2, 0, 3, true)
+    Recenter("AceA", 1607, 654)
+    Upgrade("AceA", 0, 0, 1, true)
+
     WaitForRound(73)
-    Sell("Farm F")
-    Sell("Farm G")
-    Upgrade("Farm D", 0, 0, 1, true)        ; 023 -> 024
-    
+    Upgrade("AlchA", 1, 0, 1, true)
+
     WaitForRound(74)
-    Upgrade("Farm C", 0, 0, 1, true)        ; 203 -> 204
+    Place("AceB", true)
+    Upgrade("VillageA", 2, 0, 0, true)
+    Upgrade("VillageB", 0, 2, 0, true)
+    Upgrade("AceB", 2, 0, 3, true)
+    Recenter("AceB", 1607, 654)
     
-    WaitForRound(81)
-    Sell("Farm A")
-    Upgrade("Druid A", 0, 1, 0, true)       ; 140 -> 150
-    
-    WaitForRound(84)
-    Place("Ace A", true)
-    Place("Alch B", true)
-    Place("Village C", true)
-    Upgrade("Ace A", 2, 0, 4, true)         ; 000 -> 204
-    Upgrade("Alch B", 4, 2, 0, true)        ; 000 -> 420
-    Upgrade("Village C", 2, 2, 0, true)     ; 000 -> 220
+    WaitForRound(78)
+    Upgrade("AceB", 0, 0, 1, true)
 
-    WaitForRound(89)
-    Upgrade("Wizard A", 0, 0, 1, true)        ; 024 -> 025
+    WaitForRound(82)
+    Upgrade("DruidA", 0, 1, 0, true)
 
-    WaitForRound(93, 4000)
-    Sell("Farm A")
-    Sell("Farm B")
-    Sell("Farm C")
-    Sell("Farm D")
-    Sell("Farm E")
-    Sell("Farm F")
-    Sell("Farm G")
-    Sell("Village A")
+    WaitForRound(85)
+    Upgrade("IceA", 1, 0, 0, true)
 
-    WaitForRound(95)
-    Upgrade("Ace A", 0, 0, 1, true)         ; 204 -> 205
-    
-    WaitForRound(99)
-    Upgrade("Boat A", 1, 1, 0, true)        ; 410 -> 520
+    WaitForRound(88)
+    Upgrade("WizardB", 0, 0, 1, true)
+
+    WaitForRound(92)
+    Upgrade("WizardA", 0, 1, 0, true)
+    Place("AceC", true)
+    Upgrade("AceC", 2, 0, 4, true)
+    Recenter("AceC", 1607, 654)
+
+    WaitForRound(98)
+    Sell("FarmA")
+    Sell("FarmB")
+    Upgrade("AceB", 0, 0, 1, true) */
+
+
 }
