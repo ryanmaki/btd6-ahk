@@ -111,6 +111,7 @@ RavineImpoppable() {
     Upgrade("Village B", 0, 0, 2, true)             ; 000 -> 002
     Place("Ace A", true)
     Upgrade("Ace A", 0, 0, 3, true)                 ; 000 -> 003
+    Recenter("Ace A", 133, 1006)
     
     WaitForRound(50)
     Upgrade("Village B", 0, 2, 0, true)             ; 002 -> 022

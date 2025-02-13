@@ -3,5 +3,5 @@
 
 GLACIAL_TRAIL_DATA := Map(
     "easy", [GlacialTrailEasy, ""],
-    "impoppable", [GlacialTrailImpoppable, "sauda"]
+    "impoppable", [GlacialTrailImpoppable, "benjamin"]
 )
