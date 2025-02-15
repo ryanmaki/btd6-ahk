@@ -214,8 +214,16 @@ WaitForAbility(tower, ability, position, delay := 0) {
 }
 
 UpdateRound() {
-    if SearchRound(Mod(currentRound + 1, 10)) {
-        global currentRound := currentRound + 1
+    loop 3 {
+        if SearchRound(Mod(currentRound + A_Index, 10)) {
+            updatedRound := currentRound + A_Index
+            if A_Index > 1 {
+                LogMsg(A_ThisFunc "() | Detected | currentRound: " currentRound 
+                " | updatedRound: " updatedRound " | loopcnt: " A_Index)
+            }
+            global currentRound := updatedRound
+            break
+        }
     }
 }
 
