@@ -128,41 +128,41 @@ CollectDailyReward(attempts := 3) {
 }
 
 CollectAchievements() {
-    if !ClickImage("states\home_achieve",,,45, 260, 145, 360) && SearchImage("states\home") {
+    if SearchImage("states\home") && ClickImage("states\home_achieve",,,45, 260, 145, 360) {
+        positions := 6
+        xCollect := 845 , yCollect := 445                                               ; Coord for first position (row 1 column 1)
+        xGap := 769 , yGap := 311                                                       ; xGap = distance between columns , yGap = distance between rows
+        delay := 1000
+        collectCnt := 0
+    
+        Sleep(delay)
+    
+        loop positions {
+            xPos := xCollect + xGap * Mod(A_Index - 1, 2)
+            yPos := yCollect + yGap * ((A_Index - 1) // 2)
+            Click(xPos, yPos)
+    
+            Sleep(delay)                                                                ; Wait for reward animation
+    
+            if !SearchImage("states\achieve",,530, 5, 630, 105) {
+                LogMsg("Collecting achievement at position: " A_Index, true)        
+                collectCnt += 1
+                loop {                                                                  ; Attempt to accept reward until back at achievement menu
+                    Click()
+                    Sleep(delay)
+                } until SearchImage("states\achieve",, 530, 5, 630, 105)
+            } else {
+                LogMsg("No achievement at position: " A_Index 
+                " - done checking positions", true)
+                break
+            }
+        }
+        LogMsg("CollectAchievements() complete - collect count: " collectCnt)
+        Send("{Escape}")
+        Sleep(delay)
+    } else {
         LogMsg("Home | No Achievements to collect detected", true)
         Sleep(300)
         return
     }
-    
-    positions := 6
-    xCollect := 845 , yCollect := 445                                               ; Coord for first position (row 1 column 1)
-    xGap := 769 , yGap := 311                                                       ; xGap = distance between columns , yGap = distance between rows
-    delay := 1000
-    collectCnt := 0
-
-    Sleep(delay)
-
-    loop positions {
-        xPos := xCollect + xGap * Mod(A_Index - 1, 2)
-        yPos := yCollect + yGap * ((A_Index - 1) // 2)
-        Click(xPos, yPos)
-
-        Sleep(delay)                                                                ; Wait for reward animation
-
-        if !SearchImage("states\achieve",,530, 5, 630, 105) {
-            LogMsg("Collecting achievement at position: " A_Index, true)        
-            collectCnt += 1
-            loop {                                                                  ; Attempt to accept reward until back at achievement menu
-                Click()
-                Sleep(delay)
-            } until SearchImage("states\achieve",, 530, 5, 630, 105)
-        } else {
-            LogMsg("No achievement at position: " A_Index 
-            " - done checking positions", true)
-            break
-        }
-    }
-    LogMsg("CollectAchievements() complete - collect count: " collectCnt)
-    Send("{Escape}")
-    Sleep(delay)
 }
