@@ -145,28 +145,28 @@
 |                    |                  |                      |                  |             |                          |              |         |
 | **_Intermediate_** |                  |                |            |     |                     |                |              |          |
 |                    |                  |                |            |     |                     |                |              |          |
-| Luminous Cove      | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Luminous Cove      | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ✅          | ❌       |
 | Sulfur Springs     | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Water Park         | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Polyphemus         | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Covered Garden     | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Quarry             | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 |                    |                  |                |            |     |                     |                |              |          |
-| Quiet Street       | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Quiet Street       | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ✅          | ❌       |
 | Bloonarius Prime   | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Balance            | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Encrypted          | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Bazaar             | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Adora's Temple     | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Adora's Temple     | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ✅          | ❌       |
 |                    |                  |                |            |     |                     |                |              |          |
-| Spring Spring      | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Spring Spring      | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ✅          | ❌       |
 | KartsNDarts        | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Moon Landing       | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Haunted            | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Downstream         | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Firing Range       | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 |                    |                  |                |            |     |                     |                |              |          |
-| Cracked            | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Cracked            | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ✅          | ❌       |
 | Streambed          | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Chutes             | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Rake               | ❌               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
