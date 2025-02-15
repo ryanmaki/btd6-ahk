@@ -27,7 +27,7 @@ Start() {
 
 HomeMenu() {
     CollectDailyReward()
-    CollectAchievements()
+    ; CollectAchievements()
     ClickImage("buttons\play_home")
 }
 
@@ -138,23 +138,25 @@ CollectAchievements() {
         Sleep(delay)
     
         loop positions {
-            xPos := xCollect + xGap * Mod(A_Index - 1, 2)
-            yPos := yCollect + yGap * ((A_Index - 1) // 2)
-            Click(xPos, yPos)
-    
-            Sleep(delay)                                                                ; Wait for reward animation
-    
-            if !SearchImage("states\achieve",,530, 5, 630, 105) {
-                LogMsg("Collecting achievement at position: " A_Index, true)        
-                collectCnt += 1
-                loop {                                                                  ; Attempt to accept reward until back at achievement menu
-                    Click()
-                    Sleep(delay)
-                } until SearchImage("states\achieve",, 530, 5, 630, 105)
-            } else {
-                LogMsg("No achievement at position: " A_Index 
-                " - done checking positions", true)
-                break
+            if SearchImage("states\achieve",,530, 5, 630, 105) {
+                xPos := xCollect + xGap * Mod(A_Index - 1, 2)
+                yPos := yCollect + yGap * ((A_Index - 1) // 2)
+                
+                Click(xPos, yPos)
+                Sleep(delay)                                                                ; Wait for reward animation
+                
+                if !SearchImage("states\achieve",,530, 5, 630, 105) {
+                    LogMsg("Collecting achievement at position: " A_Index, true)        
+                    collectCnt += 1
+                    loop {                                                                  ; Attempt to accept reward until back at achievement menu
+                        Click()
+                        Sleep(delay)
+                    } until SearchImage("states\achieve",, 530, 5, 630, 105)
+                } else {
+                    LogMsg("No achievement at position: " A_Index 
+                    " - done checking positions", true)
+                    break
+                }
             }
         }
         LogMsg("CollectAchievements() complete - collect count: " collectCnt)
