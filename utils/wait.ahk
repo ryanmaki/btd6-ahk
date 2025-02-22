@@ -214,6 +214,10 @@ WaitForAbility(tower, ability, position, delay := 0) {
 }
 
 UpdateRound() {
+    if SearchRound(Mod(currentRound, 10)) {
+        return
+    }
+    
     loop 3 {
         if SearchRound(Mod(currentRound + A_Index, 10)) {
             updatedRound := currentRound + A_Index
