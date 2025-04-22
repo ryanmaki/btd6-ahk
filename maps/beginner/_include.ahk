@@ -21,3 +21,4 @@
 #Include end_of_the_road.ahk
 #Include logs\main.ahk
 #Include tinkerton.ahk
+#Include spa_pits.ahk

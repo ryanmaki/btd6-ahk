@@ -4,33 +4,34 @@ global MAPS := [
         ["Monkey Meadow", MONKEY_MEADOW_DATA],
         ["In the Loop", IN_THE_LOOP_DATA],
         ["Middle of the road", MIDDLE_OF_THE_ROAD_DATA],
+        ["Spa Pits", SPA_PITS_DATA],
         ["Tinkerton", TINKERTON_DATA],
         ["Tree Stump", TREE_STUMP_DATA],
-        ["Town Center", TOWN_CENTER_DATA]
     ],
     
     ; Page 2  - Beginner 
     [
+        ["Town Center", TOWN_CENTER_DATA],
         ["One Two Tree", ONE_TWO_TREE_DATA],
         ["Scrapyard", SCRAPYARD_DATA],
         ["The Cabin", THE_CABIN_DATA],
         ["Resort", RESORT_DATA],
         ["Skates", SKATES_DATA],
-        ["Lotus Island", LOTUS_ISLAND_DATA]
     ],
     
     ; Page 3  - Beginner 
     [
+        ["Lotus Island", LOTUS_ISLAND_DATA],
         ["Candy Falls", CANDY_FALLS_DATA],
         ["Winter Park", WINTER_PARK_DATA],
         ["Carved", CARVED_DATA],
         ["Park Path", PARK_PATH_DATA],
         ["Alpine Run", ALPINE_RUN_DATA],
-        ["Frozen Over", FROZEN_OVER_DATA]
     ],
     
     ; Page 4  - Beginner 
     [
+        ["Frozen Over", FROZEN_OVER_DATA],
         ["Cubism", CUBISM_DATA],
         ["Four Circles", FOUR_CIRCLES_DATA],
         ["Hedge", HEDGE_DATA],
