@@ -54,7 +54,7 @@ CheckLevelUp() {
 CheckInstaMonkey() {
     if ClickImage("states\insta_monkey") {
         LogMsg("Insta monkey detected")
-	return true
+	    return true
     }
 }
 
@@ -112,7 +112,7 @@ WaitForRound(round, delay := 0) {
             Sleep(delay)
             break
         }
-        if defeated or SearchImage("states\defeat") {
+        if defeated or CheckDefeat() {
             global defeated := true
             LogMsg('Found defeat on R' currentRound ' when waiting for R' round '')
             ScreenRecordDefeat()
@@ -140,7 +140,7 @@ WaitForVictoryOrDefeat() {
             LogMsg("Victory")
             break
         }
-        if SearchImage("states\defeat") {
+        if CheckDefeat() {
             Sleep(500)
             ClickImage("buttons\home_defeat_1", 2000)
             ClickImage("buttons\home_defeat_2", 2000)
@@ -169,7 +169,7 @@ WaitForUpgrade(path) {
         if SearchUpgrade(path) {
             break
         }
-        if SearchImage("states\defeat") {
+        if CheckDefeat() {
             global defeated := true
             LogMsg("Found defeat instead of upgrade " path " on " toweropen)
             ScreenRecordDefeat()
@@ -196,7 +196,7 @@ WaitForAbility(tower, ability, position, delay := 0) {
         if defeated {
             break
         }
-        if SearchImage("states\defeat") {
+        if CheckDefeat() {
             global defeated := true
             LogMsg("Found defeat instead of ability " ability " from " tower)
             ScreenRecordDefeat()
@@ -237,9 +237,77 @@ Wait(delay) {
         return
     }
     Sleep(delay)
-    if SearchImage("states\defeat") or SearchImage("states\victory") or CheckInstaMonkey() {
+    if CheckDefeat() or SearchImage("states\victory") or CheckInstaMonkey() {
         global defeated := true
     }
     CheckLevelUp()
     CheckInGameMsg()
+}
+
+StartFreePlay() {
+    if defeated or !enableFreeplayInsta { 
+        return
+    }
+
+    CheckPauseMenu()
+    MouseMove(mouseRest[1], mouseRest[2])
+    Loop {
+        if SearchImage("states\victory") {
+            Sleep(500)
+            ClickImage("buttons\next")
+            ClickImage("buttons\victory_freeplay", 2000)
+            CheckInGameMsg()
+            Sleep(500)
+            Send(KEYS["play"])                                              ; Resume Game
+            global victories := victories + 1
+            global defeated := false                                        ; Ensure it is false just in case it was changed to true previously
+            global inFreeplay := true
+            LogMsg("Victory")
+            LogMsg(A_ThisFunc "() | Victory - Starting Freeplay mode")
+            return true
+        }
+        if CheckDefeat() {
+            Sleep(500)
+            global defeated := true
+            ScreenRecordDefeat()
+            LogMsg(A_ThisFunc "() | Defeat - Found during normal rounds. No longer able to start freeplay")
+            return false
+        }
+        CheckInGameMsg()
+        UpdateRound()
+        Sleep(2000)
+    }
+}
+
+WaitForFreeplayInsta() {
+    CheckPauseMenu()
+    MouseMove(mouseRest[1], mouseRest[2])
+    Loop {
+        if SearchImage("states\victory") {
+            Sleep(500)
+            ClickImage("buttons\next")
+            ClickImage("buttons\home_victory", 2000)
+            LogMsg(A_ThisFunc "() | Victory - This should not occur within this func.")
+            break
+        }
+        if CheckDefeat() {
+            Sleep(500)
+            ClickImage("buttons\next") 
+            ClickImage("buttons\home_defeat_1", 2000)
+            ClickImage("buttons\home_defeat_2", 2000)
+            LogMsg(A_ThisFunc "() | Defeat -  Found during freeplay on R" currentRound)
+            return false
+        }
+        if CheckInstaMonkey() {
+            LogMsg(A_ThisFunc "() | Leaving freeplay after insta found")
+            Send("{Esc}")
+            Sleep(1500)
+            ClickImage("buttons\home", 4000)
+            return true
+        }
+        CheckLevelUp()
+        CheckInGameMsg()
+        UpdateRound()
+        Sleep(2000)
+    }
 }

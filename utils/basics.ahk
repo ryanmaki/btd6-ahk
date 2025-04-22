@@ -47,3 +47,7 @@ MakeWindowActive(window := windowName) {
         LogMsg(window " is now activated")
     }
 }
+
+CheckDefeat() {
+    return SearchImage("states\defeat",,1835,10,1895,70) 
+}

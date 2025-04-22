@@ -81,7 +81,7 @@ InGame() {
     }
     if difficulty != "" {
         LogMsg("Waiting for the game to end...")
-        WaitForVictoryOrDefeat()
+        (enableFreeplayInsta and inFreeplay) ? WaitForFreeplayInsta() : WaitForVictoryOrDefeat()
     }
     global defeated := false
     global difficulty := ""
@@ -94,6 +94,7 @@ InGame() {
     global double_cash := false
     global speed_adjust := false
     global allowPowers := powerSettings
+    global inFreeplay := false
 }
 
 OpenBoxes() {

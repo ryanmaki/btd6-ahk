@@ -12,6 +12,7 @@ shopopen := false
 double_cash := false
 speed_adjust := false
 allowPowers := powerSettings
+inFreeplay := false
 windowName := "BloonsTD6"
 
 states := [

@@ -18,3 +18,5 @@ enableRecordDefeat := IniRead("config.ini", "settings", "enableRecordDefeat", fa
 enableInstaScreenshot := IniRead("config.ini", "settings", "enableInstaScreenshot", false) == "true"
 
 enableUnlockTier := IniRead("config.ini", "settings", "enableUnlockTier", false) == "true"
+
+enableFreeplayInsta := IniRead("config.ini", "settings", "enableFreeplayInsta", false) == "true"
