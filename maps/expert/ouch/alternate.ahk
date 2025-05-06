@@ -27,21 +27,21 @@ OuchAlternate() {
     
     Place("Dart A", true)
     Place("Sub A", true)
+    Upgrade("Dart A", 0, 0, 2, true)        ; 000 -> 002
     
     StartGame()
     
-    Place("Ben", true)
-    
     Upgrade("Sub A", 2, 0, 1, true)         ; 000 -> 201
-    Upgrade("Dart A", 0, 0, 2, true)        ; 000 -> 002
+    Place("Ben", true)
+    Place("Sniper A", true)
+    Upgrade("Sniper A", 1, 1, 0, true)      ; 000 -> 110
+    
     Upgrade("Sub A", 0, 0, 1, true)         ; 201 -> 202
     
     
     Place("Farm A", true)            
     UpdateMouseRest("Farm A")               ; Hover Farm A   
     
-    Place("Sniper A", true)
-    Upgrade("Sniper A", 1, 1, 0, true)      ; 000 -> 110
     Targeting("Sniper A", 3)                ; First -> Strong
     Upgrade("Farm A", 2, 0, 0, true)        ; 000 -> 200
     

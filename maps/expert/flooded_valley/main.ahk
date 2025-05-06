@@ -8,6 +8,6 @@ FLOODED_VALLEY_DATA := Map(
     "easy", [FloodedValleyEasy, ""],
     "impoppable", [FloodedValleyImpoppable, "benjamin"],
     "hard", [FloodedValleyHard, "benjamin"],
-    "alternate", [FloodedValleyAlternate, "benjamin"],
     "chimps", [FloodedValleyChimps, "pat"],
+    "alternate", [FloodedValleyAlternate, "benjamin"],
 )

@@ -9,5 +9,5 @@ BLOODY_PUDDLES_DATA := Map(
     "impoppable", [BloodyPuddlesImpoppable, "benjamin"],
     "hard", [BloodyPuddlesHard, "benjamin"],
     "alternate", [BloodyPuddlesAlternate, "benjamin"],
-    "chimps", [BloodyPuddlesChimps, "gwendolin"],
+    ; "chimps", [BloodyPuddlesChimps, "gwendolin"],
 )

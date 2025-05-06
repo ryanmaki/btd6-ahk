@@ -53,8 +53,10 @@ BloodyPuddlesChimps() {
     Targeting("Dart B", 3)                  ; First -> Strong
     Targeting("Dart A", 3)                  ; Last -> First
 
-    WaitForRound(8)
+    WaitForRound(9)
+    Send("{Space}")
     Place("Sub B", true)
+    Send("{Space}")
 
     WaitForRound(10)
     Place("Sniper A", true)

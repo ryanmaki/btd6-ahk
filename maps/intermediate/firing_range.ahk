@@ -1,17 +1,29 @@
 FIRING_RANGE_DATA := Map(
     "easy", [FiringRangeEasy, ""],
+    "primary", [FiringRangePrimary, "etienne"],
     "impoppable", [FiringRangeImpoppable, "benjamin"],
-
 )
 
 FiringRangeEasy() {
     global TS := Map(
-        "Dart", ["dart", [179, 252]],
-        "Druid A", ["druid", [1458, 602]],
-        "Druid B", ["druid", [246, 576]],
-        "Sniper", ["sniper", [1513, 250]],
+        "Dart", ["dart", [180, 254]],
+        "Druid A", ["druid", [1454, 575]],
+        "Druid B", ["druid", [250, 576]],
+        "Sniper", ["sniper", [1512, 253]],
     )
     GeneralEasy()
+}
+
+FiringRangePrimary() {
+    global TS := Map(
+        "BombA", ["bomb", [1301, 575]],
+        "BoomerA", ["boomer", [1453, 575]],
+        "BoomerB", ["boomer", [1377, 575]],
+        "DartA", ["dart", [1510, 252]],
+        "GlueA", ["glue", [1511, 348]],
+        "Hero", ["hero", [248, 575]],
+    )
+    IntermediatePrimary()
 }
 
 FiringRangeImpoppable() {

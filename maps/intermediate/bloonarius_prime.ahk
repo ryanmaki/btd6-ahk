@@ -1,16 +1,29 @@
 BLOONARIUS_PRIME_DATA := Map(
     "easy", [BloonariusPrimeEasy, ""],
+    "primary", [BloonariusPrimePrimary, "etienne"],
     "impoppable", [BloonariusPrimeImpoppable, "benjamin"],
 )
 
 BloonariusPrimeEasy() {
     global TS := Map(
-        "Dart", ["dart", [291, 97]],
+        "Dart", ["dart", [293, 97]],
         "Druid A", ["druid", [179, 130]],
         "Druid B", ["druid", [952, 833]],
         "Sniper", ["sniper", [806, 41]]
     )
     GeneralEasy()
+}
+
+BloonariusPrimePrimary() {
+    global TS := Map(
+        "DartA", ["dart", [977, 898]],
+        "BoomerA", ["boomer", [961, 834]],
+        "Hero", ["hero", [868, 802]],
+        "BoomerB", ["boomer", [840, 868]],
+        "BombA", ["bomb", [1127, 855]],
+        "GlueA", ["glue", [913, 880]],
+    )
+    IntermediatePrimary()
 }
 
 BloonariusPrimeImpoppable() {

@@ -19,10 +19,10 @@ FloodedValleyHard() {
     )
 
     Place("Sub A", true)
-    Place("Sub B", true)
     
     StartGame()
-
+    
+    Place("Sub B", true)
     ; WaitForRound(11)
     Place("Ben", true)
     

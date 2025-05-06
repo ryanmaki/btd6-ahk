@@ -1,16 +1,29 @@
 HAUNTED_DATA := Map(
     "easy", [HauntedEasy, ""],
+    "primary", [HauntedPrimary, "etienne"],
     "impoppable", [HauntedImpoppable, "benjamin"],
 )
 
 HauntedEasy() {
     global TS := Map(
         "Dart", ["dart", [610, 790]],
-        "Druid A", ["druid", [1060, 786]],
+        "Druid A", ["druid", [1059, 785]],
         "Druid B", ["druid", [539, 786]],
         "Sniper", ["sniper", [839, 996]],
     )
     GeneralEasy()
+}
+
+HauntedPrimary() {
+    global TS := Map(
+        "DartA", ["dart", [1060, 459]],
+        "BombA", ["bomb", [1059, 785]],
+        "BoomerA", ["boomer", [601, 785]],
+        "BoomerB", ["boomer", [607, 433]],
+        "GlueA", ["glue", [608, 496]],
+        "Hero", ["hero", [1086, 723]],
+    )
+    IntermediatePrimary()
 }
 
 HauntedImpoppable() {

@@ -1,16 +1,29 @@
 ADORAS_TEMPLE_DATA := Map(
     "easy", [AdorasTempleEasy, ""],
+    "primary", [AdorasTemplePrimary, "etienne"],
     "impoppable", [AdorasTempleImpoppable, "benjamin"],
 )
 
 AdorasTempleEasy() {
     global TS := Map(
-        "Dart", ["dart", [772, 340]],
-        "Druid A", ["druid", [901, 451]],
-        "Druid B", ["druid", [768, 451]],
+        "Dart", ["dart", [257, 495]],
+        "Druid A", ["druid", [794, 231]],
+        "Druid B", ["druid", [783, 44]],
         "Sniper", ["sniper", [897, 338]]
     )
     GeneralEasy()
+}
+
+AdorasTemplePrimary() {
+    global TS := Map(
+        "DartA", ["dart", [257, 495]],
+        "BombA", ["bomb", [742, 280]],
+        "BoomerA", ["boomer", [794, 231]],
+        "BoomerB", ["boomer", [783, 44]],
+        "GlueA", ["glue", [779, 153]],
+        "Hero", ["hero", [877, 272]],
+    )
+    IntermediatePrimary()
 }
 
 AdorasTempleImpoppable() {

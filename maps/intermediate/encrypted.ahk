@@ -1,17 +1,29 @@
 ENCRYPTED_DATA := Map(
     "easy", [EncryptedEasy, ""],
+    "primary", [EncryptedPrimary, "etienne"],
     "impoppable", [EncryptedImpoppable, "benjamin"],
-
 )
 
 EncryptedEasy() {
     global TS := Map(
-        "Dart", ["dart", [822, 378]],
+        "Dart", ["dart", [822, 379]],
         "Druid A", ["druid", [833, 441]],
         "Druid B", ["druid", [779, 37]],
         "Sniper", ["sniper", [323, 106]]
     )
     GeneralEasy()
+}
+
+EncryptedPrimary() {
+    global TS := Map(
+        "DartA", ["dart", [802, 398]],
+        "BoomerA", ["boomer", [835, 452]],
+        "Hero", ["hero", [270, 875]],
+        "BoomerB", ["boomer", [778, 39]],
+        "BombA", ["bomb", [1400, 875]],
+        "GlueA", ["glue", [869, 399]],
+    )
+    IntermediatePrimary()
 }
 
 EncryptedImpoppable() {

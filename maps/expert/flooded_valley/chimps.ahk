@@ -13,13 +13,13 @@ FloodedValleyChimps() {
         "Alch A", ["alch", [1148, 601]],
         "Ninja A", ["ninja", [936, 744]],
     )
-   
 
     Place("Sub A", true)
 
     StartGame()
-
+    Send("{Space}")
     Place("Sub B", true)
+    Send("{Space}")
 
     WaitForRound(10)
     Place("Pat", true)
@@ -32,7 +32,7 @@ FloodedValleyChimps() {
     Sleep(3000)
     Ability("Pat", 1, 1)
     Upgrade("Sub A", 0, 1, 0, true)       ; 000 -> 011
-    
+
     WaitForRound(18)
     Upgrade("Boat A", 0, 0, 2, true)       ; 000 -> 002
     Upgrade("Boat A", 2, 0, 0, true)       ; 002 -> 202
@@ -74,7 +74,7 @@ FloodedValleyChimps() {
     WaitForRound(61)
     Ability("Pat", 1, 1)
     Upgrade("Boat A", 1, 0, 0, true)       ; 402 -> 502
-    
+
     WaitForRound(63, 1000)
     Ability("Pat", 1, 1)
 

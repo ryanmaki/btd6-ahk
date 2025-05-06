@@ -4,10 +4,10 @@ MIDNIGHT_MANSION_DATA := Map(
 
 MidnightMansionEasy() {
     global TS := Map(
-        "Dart", ["dart", [368, 266]],
+        "Dart", ["dart", [371, 267]],
         "Druid A", ["druid", [588, 201]],
         "Druid B", ["druid", [1078, 201]],
-        "Sniper", ["sniper", [1228, 179]]
+        "Sniper", ["sniper", [1225, 180]]
     )
     GeneralEasy()
 }

@@ -1,5 +1,6 @@
 SULFUR_SPRINGS_DATA := Map(
     "easy", [SulfurSpringsEasy, ""],
+    "primary", [SulfurSpringsPrimary, "etienne"],
     "impoppable", [SulfurSpringsImpoppable, "benjamin"],
 )
 
@@ -11,6 +12,18 @@ SulfurSpringsEasy() {
         "Sniper", ["sniper", [1330, 350]]
     )
     GeneralEasy()
+}
+
+SulfurSpringsPrimary() {
+    global TS := Map(
+        "DartA", ["dart", [888, 313]],
+        "BoomerA", ["boomer", [1080, 156]],
+        "Hero", ["hero", [792, 299]],
+        "BoomerB", ["boomer", [948, 354]],
+        "BombA", ["bomb", [1003, 144]],
+        "GlueA", ["glue", [1047, 96]],
+    )
+    IntermediatePrimary()
 }
 
 SulfurSpringsImpoppable() {

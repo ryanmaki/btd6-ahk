@@ -1,5 +1,6 @@
 QUARRY_DATA := Map(
     "easy", [QuarryEasy, ""],
+    "primary", [QuarryPrimary, "etienne"],
     "impoppable", [QuarryImpoppable, "benjamin"],
 )
 
@@ -7,10 +8,22 @@ QuarryEasy() {
     global TS := Map(
         "Dart", ["dart", [487, 550]],
         "Druid A", ["druid", [559, 546]],
-        "Druid B", ["druid", [651, 867]],
+        "Druid B", ["druid", [637, 546]],
         "Sniper", ["sniper", [818, 71]]
     )
     GeneralEasy()
+}
+
+QuarryPrimary() {
+    global TS := Map(
+        "DartA", ["dart", [487, 550]],
+        "BoomerA", ["boomer", [805, 542]],
+        "Hero", ["hero", [885, 539]],
+        "BoomerB", ["boomer", [558, 546]],
+        "BombA", ["bomb", [679, 546]],
+        "GlueA", ["glue", [743, 499]],
+    )
+    IntermediatePrimary()
 }
 
 QuarryImpoppable() {

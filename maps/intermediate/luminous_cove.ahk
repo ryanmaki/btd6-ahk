@@ -1,16 +1,29 @@
 LUMINOUS_COVE_DATA := Map(
     "easy", [LuminousCoveEasy, ""],
+    "primary", [LuminousCovePrimary, "etienne"],
     "impoppable", [LuminousCoveImpoppable, "benjamin"],
 )
 
 LuminousCoveEasy() {
     global TS := Map(
-        "Dart", ["dart", [768, 358]],
-        "Druid A", ["druid", [705, 328]],
-        "Druid B", ["druid", [925, 723]],
-        "Sniper", ["sniper", [315, 147]],
+        "Dart", ["dart", [507, 708]],
+        "Druid A", ["druid", [1186, 702]],
+        "Druid B", ["druid", [528, 830]],
+        "Sniper", ["sniper", [874, 1039]],
     )
     GeneralEasy()
+}
+
+LuminousCovePrimary() {
+    global TS := Map(
+        "DartA", ["dart", [1183, 700]],
+        "BoomerA", ["boomer", [502, 700]],
+        "Hero", ["hero", [528, 847]],
+        "BoomerB", ["boomer", [446, 744]],
+        "BombA", ["bomb", [1163, 830]],
+        "GlueA", ["glue", [1239, 750]],
+    )
+    IntermediatePrimary()
 }
 
 LuminousCoveImpoppable() {
@@ -51,136 +64,135 @@ LuminousCoveImpoppable() {
 
     WaitForRound(9)
     Place("Hero", true)
-    
+
     WaitForRound(10)
-    Upgrade("SubA", 0,0,1, true)                ; 000 -> 001
+    Upgrade("SubA", 0, 0, 1, true)                ; 000 -> 001
 
     WaitForRound(14)
-    Upgrade("SubA", 2,0,0, true)                ; 001 -> 201
-    
+    Upgrade("SubA", 2, 0, 0, true)                ; 001 -> 201
+
     WaitForRound(17)
     Place("FarmA", true)
     UpdateMouseRest("FarmA")
-    Upgrade("FarmA", 2,0,0, true)               ; 000 -> 200
-    
+    Upgrade("FarmA", 2, 0, 0, true)               ; 000 -> 200
+
     WaitForRound(20)
     Place("DruidA", true)
 
     WaitForRound(22)
     Place("SubB", true)
-    Upgrade("SubB", 0,0,1, true)                ; 000 -> 001                
-    Upgrade("DartA", 0,0,2, true)               ; 000 -> 002
-    
+    Upgrade("SubB", 0, 0, 1, true)                ; 000 -> 001
+    Upgrade("DartA", 0, 0, 2, true)               ; 000 -> 002
+
     WaitForRound(25)
     Place("FarmB", true)
-    UpdateMouseRest("FarmA","FarmB")
-    Upgrade("FarmB", 2,0,0, true)               ; 000 -> 200
-    
+    UpdateMouseRest("FarmA", "FarmB")
+    Upgrade("FarmB", 2, 0, 0, true)               ; 000 -> 200
+
     WaitForRound(27)
     Place("SniperA", true)
     Targeting("SniperA", 3)                     ; first -> strong
-    Upgrade("SniperA", 1,0,0, true)             ; 000 -> 100
+    Upgrade("SniperA", 1, 0, 0, true)             ; 000 -> 100
 
     WaitForRound(29)
-    Upgrade("DruidA", 1,3,0, true)              ; 000 -> 130
+    Upgrade("DruidA", 1, 3, 0, true)              ; 000 -> 130
 
     WaitForRound(33)
-    Upgrade("FarmA", 0,0,3, true)               ; 000 -> 203
+    Upgrade("FarmA", 0, 0, 3, true)               ; 000 -> 203
     UpdateMouseRest("FarmB")
 
     WaitForRound(36)
-    Upgrade("SubA", 0,0,1, true)                ; 201 -> 202
-    Upgrade("SniperA", 0,2,0, true)             ; 100 -> 120
+    Upgrade("SubA", 0, 0, 1, true)                ; 201 -> 202
+    Upgrade("SniperA", 0, 2, 0, true)             ; 100 -> 120
     Targeting("SniperA", 1, true)               ; strong -> first + camo prio
 
     WaitForRound(37)
-    Upgrade("FarmB", 0,0,3, true)               ; 000 -> 203
-    Upgrade("SubA", 0,0,1, true)                ; 201 -> 203
-    
+    Upgrade("FarmB", 0, 0, 3, true)               ; 000 -> 203
+    Upgrade("SubA", 0, 0, 1, true)                ; 201 -> 203
+
     WaitForRound(39)
     Place("BoatA", true)
-    Upgrade("BoatA", 0,0,3, true)               ; 000 -> 003
+    Upgrade("BoatA", 0, 0, 3, true)               ; 000 -> 003
 
     WaitForRound(41)
     Place("BoatB", true)
-    Upgrade("BoatB", 0,0,3, true)               ; 000 -> 003
+    Upgrade("BoatB", 0, 0, 3, true)               ; 000 -> 003
     Place("BoatC", true)
-    Upgrade("BoatC", 0,0,3, true)               ; 000 -> 003
-    
+    Upgrade("BoatC", 0, 0, 3, true)               ; 000 -> 003
+
     WaitForRound(44)
     Place("BoatD", true)
-    Upgrade("BoatD", 0,0,3, true)               ; 000 -> 003
+    Upgrade("BoatD", 0, 0, 3, true)               ; 000 -> 003
 
     WaitForRound(45)
     Place("VillageA", true)
-    Upgrade("VillageA", 0,0,2, true)            ; 000 -> 002
+    Upgrade("VillageA", 0, 0, 2, true)            ; 000 -> 002
     Place("BoatE", true)
-    Upgrade("BoatE", 0,0,3, true)               ; 000 -> 003
+    Upgrade("BoatE", 0, 0, 3, true)               ; 000 -> 003
     Place("BoatF", true)
-    Upgrade("BoatF", 0,0,3, true)               ; 000 -> 003
+    Upgrade("BoatF", 0, 0, 3, true)               ; 000 -> 003
 
     WaitForRound(47)
     Place("VillageB", true)
-    Upgrade("VillageB", 0,0,2, true)            ; 000 -> 002
+    Upgrade("VillageB", 0, 0, 2, true)            ; 000 -> 002
 
     WaitForRound(49)
-    Upgrade("VillageA", 0,0,2, true)            ; 002 -> 004
-    Upgrade("VillageA", 1,0,0, true)            ; 004 -> 104
-    
+    Upgrade("VillageA", 0, 0, 2, true)            ; 002 -> 004
+    Upgrade("VillageA", 1, 0, 0, true)            ; 004 -> 104
+
     WaitForRound(50)
     Place("AceA", true)
-    Upgrade("AceA", 2,0,3, true)                ; 000 -> 203
-    Upgrade("VillageB", 0,2,0, true)            ; 002 -> 022
-    Upgrade("VillageA", 1,0,0, true)            ; 104 -> 204
+    Upgrade("AceA", 2, 0, 3, true)                ; 000 -> 203
+    Upgrade("VillageB", 0, 2, 0, true)            ; 002 -> 022
+    Upgrade("VillageA", 1, 0, 0, true)            ; 104 -> 204
     Place("BoatG", true)
-    Upgrade("BoatG", 0,0,3, true)               ; 000 -> 003
+    Upgrade("BoatG", 0, 0, 3, true)               ; 000 -> 003
 
     WaitForRound(52)
     Place("DruidB", true)
-    Upgrade("DruidB", 1,3,0, true)              ; 000 -> 130
+    Upgrade("DruidB", 1, 3, 0, true)              ; 000 -> 130
 
     WaitForRound(57)
-    Upgrade("AceA", 0,0,1, true)                ; 203 -> 204
+    Upgrade("AceA", 0, 0, 1, true)                ; 203 -> 204
 
     WaitForRound(60)
-    Upgrade("FarmA", 0,0,1, true)               ; 203 -> 204
-    
+    Upgrade("FarmA", 0, 0, 1, true)               ; 203 -> 204
+
     WaitForRound(63)
-    Upgrade("FarmB", 0,0,1, true)               ; 203 -> 204
-    Upgrade("BoatA", 0,0,1, true)               ; 003 -> 004
-    Upgrade("BoatB", 0,0,1, true)               ; 003 -> 004
-    Upgrade("BoatC", 0,0,1, true)               ; 003 -> 004
-    Upgrade("BoatD", 0,0,1, true)               ; 003 -> 004
-    Upgrade("BoatE", 0,0,1, true)               ; 003 -> 004
-    Upgrade("BoatF", 0,0,1, true)               ; 003 -> 004
-    Upgrade("BoatG", 0,0,1, true)               ; 003 -> 004
-    
+    Upgrade("FarmB", 0, 0, 1, true)               ; 203 -> 204
+    Upgrade("BoatA", 0, 0, 1, true)               ; 003 -> 004
+    Upgrade("BoatB", 0, 0, 1, true)               ; 003 -> 004
+    Upgrade("BoatC", 0, 0, 1, true)               ; 003 -> 004
+    Upgrade("BoatD", 0, 0, 1, true)               ; 003 -> 004
+    Upgrade("BoatE", 0, 0, 1, true)               ; 003 -> 004
+    Upgrade("BoatF", 0, 0, 1, true)               ; 003 -> 004
+    Upgrade("BoatG", 0, 0, 1, true)               ; 003 -> 004
+
     WaitForRound(74)
     Sell("FarmB")
-    Upgrade("AceA", 0,0,1, true)                ; 204 -> 205
-    Upgrade("VillageB", 0,1,0, true)            ; 022 -> 032
+    Upgrade("AceA", 0, 0, 1, true)                ; 204 -> 205
+    Upgrade("VillageB", 0, 1, 0, true)            ; 022 -> 032
     Place("AlchA", true)
-    Upgrade("AlchA", 4,2,0, true)               ; 000 -> 420
+    Upgrade("AlchA", 4, 2, 0, true)               ; 000 -> 420
 
     WaitForRound(78)
     Place("AceB", true)
-    Upgrade("AceB", 2,0,4, true)                ; 000 -> 204
+    Upgrade("AceB", 2, 0, 4, true)                ; 000 -> 204
     Place("AlchB", true)
-    Upgrade("AlchB", 4,2,0, true)               ; 000 -> 420
+    Upgrade("AlchB", 4, 2, 0, true)               ; 000 -> 420
 
     WaitForRound(80)
     Sell("FarmA")
     Place("AceC", true)
-    Upgrade("AceC", 2,0,4, true)                ; 000 -> 204
+    Upgrade("AceC", 2, 0, 4, true)                ; 000 -> 204
     Place("AlchC", true)
-    Upgrade("AlchC", 4,2,0, true)               ; 000 -> 420
-    Upgrade("AlchA", 1,0,0, true)               ; 420 -> 520
-
+    Upgrade("AlchC", 4, 2, 0, true)               ; 000 -> 420
+    Upgrade("AlchA", 1, 0, 0, true)               ; 420 -> 520
 
     WaitForRound(85)
     Sell("BoatC")
     Place("BoatC", true)
-    Upgrade("BoatC", 5,2,0, true)
+    Upgrade("BoatC", 5, 2, 0, true)
 
-    Upgrade("DruidA", 0,2,0, true)              ; 130 -> 150
+    Upgrade("DruidA", 0, 2, 0, true)              ; 130 -> 150
 }
