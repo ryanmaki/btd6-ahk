@@ -73,29 +73,30 @@ v## - Strategy works a majority of the time (post-v47)
 |                    |                  |                |            |     |                     |                |              |          |
 | **_Advanced_**     |                  |                |            |     |                     |                |              |          |
 |                    | Standard (Easy)  | Primary Only   | Deflation  |     | Standard (Medium)   | Military Only  | Apopalypse   | Reverse  |
-| Enchanted Glade    | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Sunset Gulch       | v4               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Enchanted Glade    | v7               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Last Resort        | ✅               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Ancient Portal     | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Castle Revenge     | ✅               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Ancient Portal     | v49              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Castle Revenge     | v49              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Dark Path          | ✅               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Erosion            | 🤷               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 |                    |                  |                |            |     |                     |                |              |          |
-| Midnight Mansion   | v48               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Sunken Columns     | 🤷               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| X Factor           | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Mesa               | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Geared             | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Spillway           | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Midnight Mansion   | v48              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Sunken Columns     | v49              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| X Factor           | v49              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Mesa               | v47              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Geared             | v47              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Spillway           | v47              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 |                    |                  |                |            |     |                     |                |              |          |
 | Cargo              | 🤷               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | Pat's Pond         | 🤷               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Peninsula          | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Peninsula          | v47              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 | High Finance       | 🤷               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Another Brick      | v48               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Off the Coast      | v47               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Another Brick      | v48              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Off the Coast      | v47              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 |                    |                  |                |            |     |                     |                |              |          |
 | Cornfield          | 🤷               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
-| Underground        | 🤷               | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
+| Underground        | v49              | ❌            | ❌         |     | ❌                 | ❌             | ❌          | ❌       |
 |                    |                  |                |            |     |                     |                |              |          |
 | **_Expert_**       |                  |                |            |     |                     |                |              |          |
 |                    | Standard (Easy)  | Primary Only   | Deflation  |     | Standard (Medium)   | Military Only  | Apopalypse   | Reverse  |
